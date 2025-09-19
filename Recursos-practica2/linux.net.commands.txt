@@ -1,0 +1,58 @@
+****** Linux net commands ******
+
+*** Ver conf interfaces:
+
+# ifconfig eth2
+# ip link show eth2
+# ip addr show eth2
+
+# ifconfig -a
+# ip addr show
+
+*** Configurar interfaces:
+
+# ifconfig eth2 10.0.4.1 netmask 255.255.255.0
+# ip addr add 10.0.4.1/24 dev eth2
+# ifconfig eth2 down
+# ifconfig eth2 up
+
+*** Quitar direcciones IP:
+
+# ifconfig eth2 0.0.0.0
+# ip addr del 10.0.4.1/24 dev eth2
+
+*** Ver tabla de ruteo:
+
+# route -n 
+# netstat -nr
+# ip route show
+
+*** Ver / Conf parámetros de TCP/IP del Kernel:
+
+# sysctl -a
+# sysctl net.ipv4.ip_forward
+# sysctl net.ipv4.ip_forward=1
+
+*** Agregar/quitar rutas:
+
+# route add default gw 10.0.1.2 
+# route del default gw 10.0.1.2 
+
+# ip route add 0.0.0.0/0 via 10.0.1.2
+# ip route del 0.0.0.0/0 via 10.0.1.2
+
+# route add -net 10.0.0.0/24 gw 10.0.1.2
+# ip route add 10.0.0.0/24 via 10.0.1.2
+
+*** ARP Ver:
+
+# arp -an
+# ip neigh show
+
+*** ARP agregar / quitar:
+
+# arp -s 10.0.1.2 00:1a:11:22:2f:63
+# arp -d 10.0.1.2
+
+# ip neigh add 10.0.1.2 lladdr 00:1a:11:22:2f:63 dev eth0
+# ip neigh del 10.0.1.2 dev eth0

@@ -1,0 +1,20 @@
+****** Linux net NAT commands ******
+
+*** Agregar reglas de NAT:
+
+ iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -o eth0 -j MASQUERADE
+
+*** Quitar:
+
+ iptables -t nat -D POSTROUTING -s 192.168.1.0/24 -o eth0 -j MASQUERADE
+
+*** Ver estado:
+
+ iptables -t nat -L -n -v
+ netstat-nat
+
+*** Otras formas:
+
+iptables -t nat -A POSTROUTING -s 192.168.1.2 -o eth0 -j SNAT --to 100.0.7.33
+iptables -t nat -D POSTROUTING -s 192.168.1.2 -o eth0 -j SNAT --to 100.0.7.33
+

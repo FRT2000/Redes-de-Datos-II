@@ -1,0 +1,59 @@
+****** Linux net6 commands ******
+
+*** Ver conf interfaces:
+
+# ifconfig eth0
+# ip link show eth0
+# ip -6 addr show eth0
+
+# ifconfig -a
+# ip -6 addr show
+
+*** Configurar interfaces:
+
+# ip -6 addr add 2001:db8:3333:0003::8/64 dev eth0 # Recomendado
+# ifconfig eth0 add 2001:db8:3333:0003::8/64
+# ifconfig eth0 down
+# ifconfig eth0 up
+# ip link set dev eth0 down
+# ip link set dev eth0 up  
+
+*** Quitar direcciones IP:
+
+# ifconfig eth0 del 2001:db8:3333:0003::2/64
+# ip addr del 2001:db8:3333:0003::2/64 dev eth2
+
+*** Ver tabla de ruteo:
+
+# ip -6 route show # Recomendado 
+# route -6 -n 
+# netstat -6 -nr
+# netstat -A inet6 -nr
+
+*** Ver / Conf parámetros de TCP/IP del Kernel:
+
+# sysctl -a
+# sysctl net.ipv6.conf.all.forwarding
+# sysctl net.ipv6.conf.eth0.disable_ipv6
+# sysctl net.ipv6.conf.all.disable_ipv6
+# sysctl net.ipv6.conf.all.forwarding=0
+
+*** Agregar/quitar rutas:
+
+ip -6 route add default via 2001:db8:3333:0004::2
+ip -6 route add 2001:db8:3333:0006::/64 via 2001:db8:3333:0005::1
+
+*** Vecinos ver / agregar / quitar:
+
+# ip -6 neigh show
+# ip -6 neigh del 2001:db8:3333:9::2 lladdr 00:00:00:aa:00:09 dev eth0
+# ip -6 neigh flush dev eth0
+# ip -6 neigh add 2001:db8:3333:9::1 lladdr 00:00:00:aa:00:08 nud permanent dev eth0
+
+*** Testing
+
+# traceroute6 -n 2001:db8:3333:6::7
+
+# ping6 2001:db8:3333:6::7
+
+# ping6 -I eth0 fe80::200:ff:feaa:4
