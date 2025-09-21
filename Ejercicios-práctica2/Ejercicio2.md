@@ -9,17 +9,17 @@
 | **Version** | Indica la versión del protocolo IP. Para IPv4 siempre es `4`. |
 | **Internet Header Length (IHL)** | Longitud del encabezado en palabras de 32 bits. Permite al receptor saber dónde comienza la sección de datos. |
 | **Type of Service (TOS)** | Indica la prioridad y el tipo de servicio que se desea para el paquete. |
-| &nbsp;&nbsp;**Precedence** | Prioridad del paquete (0 a 7). |
-| &nbsp;&nbsp;**Delay** | Minimizar la latencia del paquete. |
-| &nbsp;&nbsp;**Throughput** | Maximizar el rendimiento. |
-| &nbsp;&nbsp;**Reliability** | Garantizar la entrega confiable. |
-| &nbsp;&nbsp;**Reserved** | Reservado para uso futuro. |
+| &nbsp;&nbsp;&nbsp;&nbsp;**Precedence** | Prioridad del paquete (0 a 7). |
+| &nbsp;&nbsp;&nbsp;&nbsp;**Delay** | Minimizar la latencia del paquete. |
+| &nbsp;&nbsp;&nbsp;&nbsp;**Throughput** | Maximizar el rendimiento. |
+| &nbsp;&nbsp;&nbsp;&nbsp;**Reliability** | Garantizar la entrega confiable. |
+| &nbsp;&nbsp;&nbsp;&nbsp;**Reserved** | Reservado para uso futuro. |
 | **Total Length (TL)** | Longitud total del datagrama en bytes (encabezado + datos). |
 | **Identification** | Identifica el datagrama para reensamblar fragmentos en caso de que se divida. |
 | **Flags** | Control de fragmentación. |
-| &nbsp;&nbsp;**Reserved** | Reservado, siempre 0. |
-| &nbsp;&nbsp;**Don't Fragment (DF)** | Indica que el paquete no debe fragmentarse. |
-| &nbsp;&nbsp;**More Fragments (MF)** | Indica si hay más fragmentos del mismo datagrama. |
+| &nbsp;&nbsp;&nbsp;&nbsp;**Reserved** | Reservado, siempre 0. |
+| &nbsp;&nbsp;&nbsp;&nbsp;**Don't Fragment (DF)** | Indica que el paquete no debe fragmentarse. |
+| &nbsp;&nbsp;&nbsp;&nbsp;**More Fragments (MF)** | Indica si hay más fragmentos del mismo datagrama. |
 | **Fragment Offset** | Posición del fragmento dentro del datagrama original. |
 | **Time to Live (TTL)** | Número máximo de saltos que el paquete puede realizar antes de descartarse. Evita bucles infinitos. |
 | **Protocol** | Indica el protocolo de capa superior (TCP, UDP, ICMP, etc.). |
@@ -27,7 +27,7 @@
 | **Source Address** | Dirección IP de origen del datagrama. |
 | **Destination Address** | Dirección IP de destino del datagrama. |
 | **Options** | Opciones adicionales (como seguridad, rutas, timestamps). |
-| &nbsp;&nbsp;**Padding** | Relleno para alinear el encabezado a múltiplos de 32 bits. |
+| &nbsp;&nbsp;&nbsp;&nbsp;**Padding** | Relleno para alinear el encabezado a múltiplos de 32 bits. |
 | **Data** | Datos o carga útil del datagrama (ej. TCP/UDP). |
 
 ### IPv6
