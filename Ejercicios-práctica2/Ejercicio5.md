@@ -68,4 +68,4 @@ También podríamos haberlo hecho restando uno (1) en la parte de bits asignados
 
 0100 0001.1100 1100.01|**11 1111.1111 1110**| -> Última dirección de red asignable para host.
 
-**Rango de direcciones asignables** -> `65.204.64.1` - `65.204.127.254`.
+**Rango de direcciones asignables** -> 65.204.64.1 - 65.204.127.254.
