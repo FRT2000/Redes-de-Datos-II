@@ -11,7 +11,7 @@ Para armar la máscara dejamos el primer octeto con unos (1), para no modificar 
 
 1111 1111.|**1111 1111.11**|00 0000.0000 0000 -> máscara utilizada para identificar la red subneteada.
 
-255.255.192.0 -> Máscara de red utilizada al pasar de binario a decimal.
+255.255.192.0 -> **Máscara de red utilizada al pasar de binario a decimal**.
 
 65.0.0.0/18   -> Podemos escribir su equivalente en notación CIDR, le sumamos 10 al prefijo original (/8) ya que, en este caso, se toman 10 bits adicionales para subnetting.
 
@@ -68,4 +68,4 @@ También podríamos haberlo hecho restando uno (1) en la parte de bits asignados
 
 0100 0001.1100 1100.01|**11 1111.1111 1110**| -> Última dirección de red asignable para host.
 
-**Rango de direcciones asignables** -> 65.204.64.1 - 65.204.127.254.
+**Rango de direcciones asignables** -> 65.204.64.1 - 65.204.127.254
