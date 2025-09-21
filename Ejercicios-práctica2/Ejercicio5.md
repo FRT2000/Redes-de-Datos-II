@@ -15,6 +15,8 @@ Para armar la máscara dejamos el primer octeto con unos (1), para no modificar 
 
 65.0.0.0/18   -> Podemos escribir su equivalente en notación CIDR, le sumamos 10 al prefijo original (/8) ya que, en este caso, se toman 10 bits adicionales para subnetting.
 
+---
+
 ### Subred 817
 
 #### Dirección de subred 817

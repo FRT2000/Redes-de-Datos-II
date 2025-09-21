@@ -15,6 +15,8 @@ Para armar la máscara dejamos el primer octeto con unos (1), para no modificar 
 
 195.200.45.0/28 -> Podemos escribir su equivalente en notación CIDR, le sumamos 4 al prefijo original (/24) ya que, en este caso, se toman 4 bits adicionales para subnetting.
 
+---
+
 ### Definir 9 subredes
 En este caso tomaremos las 9 subredes a partir de la primera dirección de subred. Podemos elegir la cualquiera de las 16 subredes disponibles dentro del rango comprendido.
 
@@ -44,6 +46,8 @@ Tambíen podemos seguir sumando uno (1) en los bits asignados para las direccion
 - 195.200.45.112/28
 - 195.200.45.128/28
 
+---
+
 ### Subred 195.200.45.0/28
 
 Se elige esta subred por simplicidad.
@@ -59,6 +63,8 @@ Partiendo de la dirección de red obtenida, colocamos todos los bits reservados 
 1100 0011.1100 1000.0010 1101.0000 1111 /28 -> **Dirección de broadcast de la subred**.
 
 195.200.45.15/28 -> **Dirección de broadcast al pasar de binario a decimal**.
+
+---
 
 #### Direcciones asignables
 Primero identificamos la primera dirección de red asignable a un host, tomando como referencia la dirección de red que hemos elegido. Como esta dirección nos identifica la red no es posible asignarla, entonces comenzamos a partir de la siguiente red para asignar los host.
