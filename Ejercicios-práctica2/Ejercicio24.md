@@ -4,7 +4,7 @@
 
  ### 00:1b:77:b1:49:a1
 
-**Primer paso:** separamos la direeción MAC en dos porciones de 3 bytes cada una.
+**Primer paso:** separamos la dirección MAC en dos porciones de 3 bytes cada una.
 
 00:1b:77    |   b1:49:a1 -> Dirección MAC en dos partes.
 
@@ -38,7 +38,7 @@ fe80::021b:77ff:feb1:49a1/64
 
 ### e8:1c:23:a3:21:f4
 
-**Primer paso:** separamos la direeción MAC en dos porciones de 3 bytes cada una.
+**Primer paso:** separamos la dirección MAC en dos porciones de 3 bytes cada una.
 
 e8:1c:23    |   a3:21:f4 -> Dirección MAC en dos partes.
 
