@@ -1,0 +1,683 @@
+node n3 {
+    type lanswitch
+    network-config {
+	hostname n3
+	!
+    }
+    canvas c1
+    iconcoords {197.0 233.0}
+    labelcoords {197.0 257.0}
+    interface-peer {e2 n4}
+    interface-peer {e0 n1}
+    interface-peer {e1 n2}
+}
+
+node n4 {
+    type router
+    model router
+    network-config {
+	hostname n4
+	!
+	interface eth2
+	 ip address 10.0.2.1/24
+	 ipv6 address 2001:2::1/64
+	!
+	interface eth1
+	 ip address 10.0.1.1/24
+	 ipv6 address 2001:1::1/64
+	!
+	interface eth0
+	 ip address 10.0.0.1/24
+	 ipv6 address 2001:0::1/64
+	!
+    }
+    canvas c1
+    iconcoords {298.0 310.0}
+    labelcoords {298.0 342.0}
+    interface-peer {eth0 n3}
+    interface-peer {eth1 n5}
+    interface-peer {eth2 n7}
+}
+
+node n5 {
+    type router
+    model router
+    network-config {
+	hostname n5
+	!
+	interface eth3
+	 ip address 10.0.6.1/24
+	 ipv6 address 2001:6::1/64
+	!
+	interface eth2
+	 ip address 10.0.4.1/24
+	 ipv6 address 2001:4::1/64
+	!
+	interface eth1
+	 ip address 10.0.3.1/24
+	 ipv6 address 2001:3::1/64
+	!
+	interface eth0
+	 ip address 10.0.1.2/24
+	 ipv6 address 2001:1::2/64
+	!
+    }
+    canvas c1
+    iconcoords {443.0 209.0}
+    labelcoords {443.0 241.0}
+    interface-peer {eth0 n4}
+    interface-peer {eth1 n7}
+    interface-peer {eth2 n6}
+    interface-peer {eth3 n12}
+}
+
+node n6 {
+    type router
+    model router
+    network-config {
+	hostname n6
+	!
+	interface eth1
+	 ip address 10.0.7.1/24
+	 ipv6 address 2001:7::1/64
+	!
+	interface eth0
+	 ip address 10.0.4.2/24
+	 ipv6 address 2001:4::2/64
+	!
+    }
+    canvas c1
+    iconcoords {565.0 301.0}
+    labelcoords {565.0 333.0}
+    interface-peer {eth0 n5}
+    interface-peer {eth1 n15}
+}
+
+node n7 {
+    type router
+    model router
+    network-config {
+	hostname n7
+	!
+	interface eth2
+	 ip address 10.0.5.1/24
+	 ipv6 address 2001:5::1/64
+	!
+	interface eth1
+	 ip address 10.0.3.2/24
+	 ipv6 address 2001:3::2/64
+	!
+	interface eth0
+	 ip address 10.0.2.2/24
+	 ipv6 address 2001:2::2/64
+	!
+    }
+    canvas c1
+    iconcoords {452.0 403.0}
+    labelcoords {452.0 435.0}
+    interface-peer {eth0 n4}
+    interface-peer {eth1 n5}
+    interface-peer {eth2 n8}
+}
+
+node n1 {
+    type router
+    model PC
+    network-config {
+	hostname n1
+	!
+	interface eth0
+	 ip address 10.0.0.20/24
+	 ipv6 address 2001:0::20/64
+	!
+    }
+    canvas c1
+    iconcoords {126.0 203.0}
+    labelcoords {126.0 235.0}
+    interface-peer {eth0 n3}
+}
+
+node n2 {
+    type router
+    model PC
+    network-config {
+	hostname n2
+	!
+	interface eth0
+	 ip address 10.0.0.21/24
+	 ipv6 address 2001:0::21/64
+	!
+    }
+    canvas c1
+    iconcoords {202.0 165.0}
+    labelcoords {202.0 197.0}
+    interface-peer {eth0 n3}
+}
+
+node n9 {
+    type router
+    model PC
+    network-config {
+	hostname n9
+	!
+	interface eth0
+	 ip address 10.0.5.20/24
+	 ipv6 address 2001:5::20/64
+	!
+    }
+    canvas c1
+    iconcoords {383.0 519.0}
+    labelcoords {383.0 551.0}
+    interface-peer {eth0 n8}
+}
+
+node n10 {
+    type router
+    model PC
+    network-config {
+	hostname n10
+	!
+	interface eth0
+	 ip address 10.0.5.21/24
+	 ipv6 address 2001:5::21/64
+	!
+    }
+    canvas c1
+    iconcoords {449.0 544.0}
+    labelcoords {449.0 576.0}
+    interface-peer {eth0 n8}
+}
+
+node n11 {
+    type router
+    model PC
+    network-config {
+	hostname n11
+	!
+	interface eth0
+	 ip address 10.0.5.22/24
+	 ipv6 address 2001:5::22/64
+	!
+    }
+    canvas c1
+    iconcoords {524.0 520.0}
+    labelcoords {524.0 552.0}
+    interface-peer {eth0 n8}
+}
+
+node n12 {
+    type hub
+    network-config {
+	hostname n12
+	!
+    }
+    canvas c1
+    iconcoords {469.0 113.0}
+    labelcoords {469.0 137.0}
+    interface-peer {e0 n5}
+    interface-peer {e1 n13}
+    interface-peer {e2 n14}
+}
+
+node n13 {
+    type router
+    model PC
+    network-config {
+	hostname n13
+	!
+	interface eth0
+	 ip address 10.0.6.20/24
+	 ipv6 address 2001:6::20/64
+	!
+    }
+    canvas c1
+    iconcoords {433.0 54.0}
+    labelcoords {433.0 86.0}
+    interface-peer {eth0 n12}
+}
+
+node n14 {
+    type router
+    model PC
+    network-config {
+	hostname n14
+	!
+	interface eth0
+	 ip address 10.0.6.21/24
+	 ipv6 address 2001:6::21/64
+	!
+    }
+    canvas c1
+    iconcoords {549.0 86.0}
+    labelcoords {549.0 118.0}
+    interface-peer {eth0 n12}
+}
+
+node n8 {
+    type lanswitch
+    network-config {
+	hostname n8
+	!
+    }
+    canvas c1
+    iconcoords {453.0 480.0}
+    labelcoords {453.0 504.0}
+    interface-peer {e0 n7}
+    interface-peer {e1 n9}
+    interface-peer {e2 n10}
+    interface-peer {e3 n11}
+}
+
+node n15 {
+    type router
+    model host
+    network-config {
+	hostname n15
+	!
+	interface eth0
+	 ip address 10.0.7.10/24
+	 ipv6 address 2001:7::10/64
+	!
+    }
+    canvas c1
+    iconcoords {792.0 302.0}
+    labelcoords {792.0 334.0}
+    interface-peer {eth0 n6}
+}
+
+link l3 {
+    nodes {n3 n4}
+    bandwidth 0
+}
+
+link l4 {
+    nodes {n4 n5}
+    bandwidth 0
+}
+
+link l5 {
+    nodes {n4 n7}
+    bandwidth 0
+}
+
+link l6 {
+    nodes {n5 n7}
+    bandwidth 0
+}
+
+link l7 {
+    nodes {n5 n6}
+    bandwidth 0
+}
+
+link l1 {
+    nodes {n1 n3}
+    bandwidth 0
+}
+
+link l2 {
+    nodes {n2 n3}
+    bandwidth 0
+}
+
+link l12 {
+    nodes {n12 n5}
+    bandwidth 0
+}
+
+link l13 {
+    nodes {n13 n12}
+    bandwidth 0
+}
+
+link l14 {
+    nodes {n12 n14}
+    bandwidth 0
+}
+
+link l8 {
+    nodes {n7 n8}
+    bandwidth 0
+}
+
+link l9 {
+    nodes {n8 n9}
+    bandwidth 0
+}
+
+link l10 {
+    nodes {n8 n10}
+    bandwidth 0
+}
+
+link l11 {
+    nodes {n8 n11}
+    bandwidth 0
+}
+
+link l15 {
+    nodes {n6 n15}
+    bandwidth 0
+}
+
+annotation a1 {
+    type text
+    iconcoords {106.0 241.0}
+    label {}
+    canvas c1
+}
+
+annotation a2 {
+    iconcoords {140.0 255.0}
+    type text
+    label {SWITCH 1}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a3 {
+    type text
+    iconcoords {151.0 85.0}
+    label {}
+    canvas c1
+}
+
+annotation a4 {
+    type text
+    iconcoords {194.0 271.0}
+    label {}
+    canvas c1
+}
+
+annotation a5 {
+    type text
+    iconcoords {191.0 276.0}
+    label {}
+    canvas c1
+}
+
+annotation a6 {
+    type text
+    iconcoords {505.0 270.0}
+    label {}
+    canvas c1
+}
+
+annotation a7 {
+    iconcoords {267.0 325.0}
+    type text
+    label {A}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a8 {
+    iconcoords {459.0 425.0}
+    type text
+    label {C}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a9 {
+    iconcoords {451.0 233.0}
+    type text
+    label {B}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a10 {
+    iconcoords {553.0 324.0}
+    type text
+    label {ISP}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a11 {
+    iconcoords {361.0 477.0}
+    type text
+    label {SWITCH 2}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a12 {
+    iconcoords {273.0 284.0}
+    type text
+    label {eth0}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a13 {
+    iconcoords {324.0 298.0}
+    type text
+    label {eth1}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a14 {
+    iconcoords {296.0 337.0}
+    type text
+    label {eth2}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a15 {
+    iconcoords {454.0 188.0}
+    type text
+    label {eth0}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a16 {
+    iconcoords {506.0 293.0}
+    type text
+    label {eth0}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a17 {
+    iconcoords {415.0 426.0}
+    type text
+    label {eth0}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a18 {
+    type text
+    iconcoords {146.0 100.0}
+    label {}
+    canvas c1
+}
+
+annotation a19 {
+    iconcoords {700.0 266.0 881.0 352.0}
+    type rectangle
+    label {}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    color #acc0ff
+    width 0
+    border black
+    rad 25
+    canvas c1
+}
+
+annotation a20 {
+    type text
+    iconcoords {692.0 299.0}
+    label {}
+    canvas c1
+}
+
+annotation a21 {
+    type text
+    iconcoords {188.0 280.0}
+    label {}
+    canvas c1
+}
+
+annotation a22 {
+    iconcoords {754.0 330.0}
+    type text
+    label {INTERNET}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a23 {
+    iconcoords {174.0 303.0}
+    type text
+    label {172.16.2.1/27}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a24 {
+    iconcoords {222.0 352.0}
+    type text
+    label {192.168.10.6/30}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a25 {
+    iconcoords {292.0 200.0}
+    type text
+    label {192.168.10.17/30}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a26 {
+    iconcoords {506.0 119.0}
+    type text
+    label {192.168.1.69/26}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a27 {
+    iconcoords {455.0 379.0}
+    type text
+    label {192.168.10.1/30}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a28 {
+    iconcoords {490.0 549.0}
+    type text
+    label {10.10.10.43/24}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a30 {
+    iconcoords {538.0 274.0}
+    type text
+    label {200.16.5.9/30}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a29 {
+    iconcoords {408.0 111.0}
+    type text
+    label {HUB 1}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+canvas c1 {
+    name {Canvas1}
+}
+
+option global {
+    interface_names no
+    ip_addresses no
+    ipv6_addresses no
+    node_labels no
+    link_labels yes
+    show_api no
+    background_images no
+    annotations yes
+    grid yes
+    traffic_start 0
+}
+
+option session {
+}
+

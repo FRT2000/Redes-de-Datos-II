@@ -2,8 +2,8 @@
 
 ## Dado el siguiente gráfico, y según los datos brindados, para cada segmento de red, responda:
 
-[Hacer gráfico en CORE para colocarlo acá]
-
+![Diagrama Ejercicio 14](../Recursos-práctica2/Ejercicio14-Diagrama.png)
+ 
 - Dirección y Clase (A,B o C) de Red.
 - Dirección y Máscara de Subred. Dirección de Broadcast.
 - Cantidad de direcciones utilizables en cada subred.
