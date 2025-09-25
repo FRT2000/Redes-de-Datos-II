@@ -87,11 +87,11 @@
 
 ### Dominios de colisión 
 
-[Dominios de colisión](../Recursos-práctica2/Ejercicio14-Dominios-Colision.png)
+![Dominios de colisión](../Recursos-práctica2/Ejercicio14-Dominios-Colision.png)
 
 ### Dominios de broadcast
 
-[Dominios de colisión](../Recursos-práctica2/Ejercicio14-Dominios-Broadcast.png)
+![Dominios de colisión](../Recursos-práctica2/Ejercicio14-Dominios-Broadcast.png)
 
 
 ## Asigne una dirección adecuada a cada interfaz de red de los routers.
