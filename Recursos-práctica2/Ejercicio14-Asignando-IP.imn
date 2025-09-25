@@ -63,8 +63,8 @@ node n5 {
 	!
     }
     canvas c1
-    iconcoords {447.0 208.0}
-    labelcoords {447.0 240.0}
+    iconcoords {443.0 209.0}
+    labelcoords {443.0 241.0}
     interface-peer {eth0 n4}
     interface-peer {eth1 n7}
     interface-peer {eth2 n6}
@@ -166,8 +166,8 @@ node n9 {
 	!
     }
     canvas c1
-    iconcoords {382.0 507.0}
-    labelcoords {382.0 539.0}
+    iconcoords {383.0 519.0}
+    labelcoords {383.0 551.0}
     interface-peer {eth0 n8}
 }
 
@@ -183,8 +183,8 @@ node n10 {
 	!
     }
     canvas c1
-    iconcoords {449.0 533.0}
-    labelcoords {449.0 565.0}
+    iconcoords {449.0 544.0}
+    labelcoords {449.0 576.0}
     interface-peer {eth0 n8}
 }
 
@@ -200,8 +200,8 @@ node n11 {
 	!
     }
     canvas c1
-    iconcoords {509.0 502.0}
-    labelcoords {509.0 534.0}
+    iconcoords {524.0 520.0}
+    labelcoords {524.0 552.0}
     interface-peer {eth0 n8}
 }
 
@@ -260,8 +260,8 @@ node n8 {
 	!
     }
     canvas c1
-    iconcoords {453.0 466.0}
-    labelcoords {453.0 490.0}
+    iconcoords {453.0 480.0}
+    labelcoords {453.0 504.0}
     interface-peer {e0 n7}
     interface-peer {e1 n9}
     interface-peer {e2 n10}
@@ -407,7 +407,7 @@ annotation a6 {
 }
 
 annotation a7 {
-    iconcoords {267.0 325.0}
+    iconcoords {277.0 332.0}
     type text
     label {A}
     labelcolor black
@@ -451,7 +451,7 @@ annotation a10 {
 }
 
 annotation a11 {
-    iconcoords {362.0 463.0}
+    iconcoords {361.0 477.0}
     type text
     label {SWITCH 2}
     labelcolor black
@@ -462,7 +462,7 @@ annotation a11 {
 }
 
 annotation a12 {
-    iconcoords {273.0 284.0}
+    iconcoords {236.0 294.0}
     type text
     label {eth0}
     labelcolor black
@@ -473,7 +473,7 @@ annotation a12 {
 }
 
 annotation a13 {
-    iconcoords {324.0 298.0}
+    iconcoords {334.0 290.0}
     type text
     label {eth1}
     labelcolor black
@@ -495,7 +495,7 @@ annotation a14 {
 }
 
 annotation a15 {
-    iconcoords {454.0 188.0}
+    iconcoords {456.0 174.0}
     type text
     label {eth0}
     labelcolor black
@@ -506,7 +506,7 @@ annotation a15 {
 }
 
 annotation a16 {
-    iconcoords {506.0 293.0}
+    iconcoords {528.0 267.0}
     type text
     label {eth0}
     labelcolor black
@@ -517,7 +517,7 @@ annotation a16 {
 }
 
 annotation a17 {
-    iconcoords {415.0 426.0}
+    iconcoords {416.0 427.0}
     type text
     label {eth0}
     labelcolor black
@@ -574,7 +574,7 @@ annotation a22 {
 }
 
 annotation a23 {
-    iconcoords {174.0 303.0}
+    iconcoords {175.0 310.0}
     type text
     label {172.16.2.1/27}
     labelcolor black
@@ -596,7 +596,7 @@ annotation a24 {
 }
 
 annotation a25 {
-    iconcoords {292.0 200.0}
+    iconcoords {288.0 221.0}
     type text
     label {192.168.10.17/30}
     labelcolor black
@@ -629,7 +629,7 @@ annotation a27 {
 }
 
 annotation a28 {
-    iconcoords {513.0 530.0}
+    iconcoords {490.0 549.0}
     type text
     label {10.10.10.43/24}
     labelcolor black
@@ -640,7 +640,7 @@ annotation a28 {
 }
 
 annotation a30 {
-    iconcoords {538.0 274.0}
+    iconcoords {545.0 279.0}
     type text
     label {200.16.5.9/30}
     labelcolor black
@@ -662,93 +662,123 @@ annotation a29 {
 }
 
 annotation a31 {
-    iconcoords {80.0 138.0 312.0 319.0}
-    type oval
-    label {}
+    iconcoords {381.0 387.0}
+    type text
+    label {eth1}
     labelcolor black
-    fontfamily {Arial}
-    fontsize {12}
-    color #ffffff
-    width 3
-    border #00c900
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
     canvas c1
 }
 
 annotation a32 {
-    iconcoords {318.0 221.0 414.0 308.0}
-    type oval
-    label {}
+    iconcoords {455.0 366.0}
+    type text
+    label {eth2}
     labelcolor black
-    fontfamily {Arial}
-    fontsize {12}
-    color #ffffff
-    width 3
-    border #00c900
+    fontfamily {KacstArt}
+    fontsize 10
+    effects {bold}
     canvas c1
 }
 
 annotation a33 {
-    iconcoords {331.0 318.0 434.0 401.0}
-    type oval
-    label {}
+    iconcoords {386.0 209.0}
+    type text
+    label {eth1}
     labelcolor black
-    fontfamily {Arial}
-    fontsize {12}
-    color #ffffff
-    width 3
-    border #00c900
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
     canvas c1
 }
 
 annotation a34 {
-    iconcoords {440.0 251.0 462.0 367.0}
-    type oval
-    label {}
+    iconcoords {410.0 248.0}
+    type text
+    label {eth2}
     labelcolor black
-    fontfamily {Arial}
-    fontsize {12}
-    color #ffffff
-    width 3
-    border #00c900
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
     canvas c1
 }
 
 annotation a35 {
-    iconcoords {480.0 218.0 542.0 284.0}
-    type oval
-    label {}
+    iconcoords {467.0 214.0}
+    type text
+    label {eth3}
     labelcolor black
-    fontfamily {Arial}
-    fontsize {12}
-    color #ffffff
-    width 3
-    border #00c900
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
     canvas c1
 }
 
 annotation a36 {
-    iconcoords {373.0 20.0 634.0 181.0}
-    type oval
-    label {}
+    iconcoords {309.0 402.0}
+    type text
+    label {192.168.10.5/30}
     labelcolor black
-    fontfamily {Arial}
-    fontsize {12}
-    color #ffffff
-    width 3
-    border #00c900
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
     canvas c1
 }
 
 annotation a37 {
-    iconcoords {339.0 431.0 563.0 569.0}
-    type oval
-    label {}
+    iconcoords {431.0 442.0}
+    type text
+    label {10.10.10.1/24}
     labelcolor black
-    fontfamily {Arial}
-    fontsize {12}
-    color #ffffff
-    width 3
-    border #00c900
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a38 {
+    iconcoords {383.0 264.0}
+    type text
+    label {192.168.10.2/30}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a39 {
+    iconcoords {476.0 228.0}
+    type text
+    label {200.16.5.10/30}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize {10}
+    effects {bold}
+    canvas c1
+}
+
+annotation a40 {
+    iconcoords {320.0 304.0}
+    type text
+    label {192.168.10.18/30}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize 10
+    effects {bold}
+    canvas c1
+}
+
+annotation a41 {
+    iconcoords {454.0 188.0}
+    type text
+    label {192.168.1.65/26}
+    labelcolor black
+    fontfamily {KacstArt}
+    fontsize 10
+    effects {bold}
     canvas c1
 }
 

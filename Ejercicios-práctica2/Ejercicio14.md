@@ -23,7 +23,7 @@
 - Dirección de Red -> 192.168.10.0/24
 - Dirección de Subred -> 192.168.10.4/30
 - Máscara de Subred -> 255.255.255.252 ó /30
-- Dirección de Broadcast -> 192.168.10.3/30
+- Dirección de Broadcast -> 192.168.10.7/30
 - Direcciones utilizables en cada subred -> $2^{2}$ - 2 = 2
 
 ---
@@ -100,4 +100,7 @@ Se observan 7 dominios de broadcast
 
 ## Asigne una dirección adecuada a cada interfaz de red de los routers.
 
+![IP para cada interfaz de router](../Recursos-práctica2/Ejercicio14-Asignando-IP.png)
+
 ## Defina la tabla de ruteo para cada router de manera que todos los dispositivos en la red puedan comunicarse y, además, salir a Internet.
+
