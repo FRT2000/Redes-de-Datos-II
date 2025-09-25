@@ -87,9 +87,13 @@
 
 ### Dominios de colisión 
 
+Se observan 12 dominios de colisión
+
 ![Dominios de colisión](../Recursos-práctica2/Ejercicio14-Dominios-Colision.png)
 
 ### Dominios de broadcast
+
+Se observan 7 dominios de broadcast
 
 ![Dominios de colisión](../Recursos-práctica2/Ejercicio14-Dominios-Broadcast.png)
 
