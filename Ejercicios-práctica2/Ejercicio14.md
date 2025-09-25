@@ -97,10 +97,13 @@ Se observan 7 dominios de broadcast
 
 ![Dominios de colisión](../Recursos-práctica2/Ejercicio14-Dominios-Broadcast.png)
 
+---
 
 ## Asigne una dirección adecuada a cada interfaz de red de los routers.
 
 ![IP para cada interfaz de router](../Recursos-práctica2/Ejercicio14-Asignando-IP.png)
+
+---
 
 ## Defina la tabla de ruteo para cada router de manera que todos los dispositivos en la red puedan comunicarse y, además, salir a Internet.
 
