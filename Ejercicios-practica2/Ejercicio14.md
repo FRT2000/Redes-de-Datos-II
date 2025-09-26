@@ -2,7 +2,7 @@
 
 ## Dado el siguiente gráfico, y según los datos brindados, para cada segmento de red, responda:
 
-![Diagrama Ejercicio 14](../Recursos-práctica2/Ejercicio14-Diagrama.png)
+![Diagrama Ejercicio 14](../Recursos-practica2/Ejercicio14-Diagrama.png)
 
 ## Dirección y Clase (A,B o C) de Red. Dirección y Máscara de Subred. Dirección de Broadcast. Cantidad de direcciones utilizables en cada subred.
 
@@ -89,19 +89,19 @@
 
 Se observan 12 dominios de colisión
 
-![Dominios de colisión](../Recursos-práctica2/Ejercicio14-Dominios-Colision.png)
+![Dominios de colisión](../Recursos-practica2/Ejercicio14-Dominios-Colision.png)
 
 ### Dominios de broadcast
 
 Se observan 7 dominios de broadcast
 
-![Dominios de colisión](../Recursos-práctica2/Ejercicio14-Dominios-Broadcast.png)
+![Dominios de colisión](../Recursos-practica2/Ejercicio14-Dominios-Broadcast.png)
 
 ---
 
 ## Asigne una dirección adecuada a cada interfaz de red de los routers.
 
-![IP para cada interfaz de router](../Recursos-práctica2/Ejercicio14-Asignando-IP.png)
+![IP para cada interfaz de router](../Recursos-practica2/Ejercicio14-Asignando-IP.png)
 
 ---
 

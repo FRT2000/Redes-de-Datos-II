@@ -1,0 +1,14 @@
+¿Hay alguna restricción para la sumarización?
+
+¿La salida a Internet se considera dominio de colisión y de broadcast?
+
+¿Debo asignarle una IP al servicio de Internet?
+
+Las direcciones 6bone que fueron devueltas ¿Son de tipo públicas o siguen siendo reservadas?
+
+Si necesito "X" cantidad de subredes y "H" cantidad de hosts ¿Debo priorizar la cantidad de hosts para reservar los bits?
+
+¿Traceroute muestra la cantidad de saltos realizados y ping la cantidad de saltos que sobraron?
+¿Con cuántos saltos por default cuenta ping en Windows?
+
+Consultar sobre el Ruteo. ¿Tiene sentido colocar redes que no contienen dispositivos?
