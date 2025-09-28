@@ -2,22 +2,48 @@
 No existen restricciones, sólo debemos ser cuidadosos y que el prefijo elegido abarque todas las subredes 
 que estamos sumarizando.
 
+-----------------------------------------------------------------------------------------------------------
+
 ¿La salida a Internet se considera dominio de colisión y de broadcast?
 No es posible determinarlo, porque podría haber diferentes dispositivos en la salida a Internet.
+
+-----------------------------------------------------------------------------------------------------------
 
 ¿Debo asignarle una IP al servicio de Internet?
 Eso se define por parte del proveedor de servicios de Internet, no podemos determinarlo.
 
+-----------------------------------------------------------------------------------------------------------
+
 Las direcciones 6bone que fueron devueltas ¿Son de tipo públicas o siguen siendo reservadas?
 Si bien fueron devultas, en caso de contar con este tipo de direcciones, deberíamos reservarlas.
 
-Si necesito "X" cantidad de subredes y "H" cantidad de hosts ¿Debo priorizar la cantidad de hosts para reservar los bits?
+-----------------------------------------------------------------------------------------------------------
+
+Si necesito "X" cantidad de subredes y "H" cantidad de hosts ¿Debo priorizar la cantidad 
+de hosts para reservar los bits?
 Siempre debo empezar definiendo los Hosts. 
+
+-----------------------------------------------------------------------------------------------------------
 
 ¿Traceroute muestra la cantidad de saltos realizados y ping la cantidad de saltos que sobraron?
 Traceroute (Tracert en Windows) muestra la cantidad de saltos realizados hasta llegar a la IP destino.
 Ping muestra la cantidad de intentos que ha realizado para poder comunicarse con la IP destino.
 
+-----------------------------------------------------------------------------------------------------------
+
 Consultar sobre el Ruteo. ¿Tiene sentido colocar redes que no contienen dispositivos?
-Puede colocarse, pero la idea es elegir la menor cantidad de saltos y que la tabla de ruteo quede lo más simplificada
-posible.
+Puede colocarse, pero la idea es elegir la menor cantidad de saltos y que la tabla de ruteo quede 
+lo más simplificada posible.
+
+-----------------------------------------------------------------------------------------------------------
+
+¿Por qué al hacer un Traceroute desde PC "n9" hacia PC "n12" el viaje no es por la ruta que está por default?
+
+-----------------------------------------------------------------------------------------------------------
+
+En el ejercicio 18, si se agrega una nueva red, al Router "n1" ¿Solamente bastaría con agregar a la tabla
+de ruteo de "n1" la nueva subred, ya que este conoce sus redes directamente conectadas?
+
+-----------------------------------------------------------------------------------------------------------
+
+Consultar sobre ICMP y Ruteo 3. Práctica 2, ejercicio 18
