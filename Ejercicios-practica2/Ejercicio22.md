@@ -4,4 +4,6 @@
 
 ![Diagrama ejercicio 22](/Recursos-practica2/Ejercicio22-Diagrama.png)
 
+---
+
 ![Figura 4](/Recursos-practica2/Ejercicio22-figura4.png)
