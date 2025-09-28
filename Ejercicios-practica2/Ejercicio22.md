@@ -2,4 +2,6 @@
 
 ##  22. Utilizando el CORE, arme la siguiente topología (fig. 3):
 
-[Queda pendiente la resolución]
+![Diagrama ejercicio 22](/Recursos-practica2/Ejercicio22-Diagrama.png)
+
+![Figura 4](/Recursos-practica2/Ejercicio22-figura4.png)
