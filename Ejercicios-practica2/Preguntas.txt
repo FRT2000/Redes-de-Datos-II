@@ -47,3 +47,8 @@ de ruteo de "n1" la nueva subred, ya que este conoce sus redes directamente cone
 -----------------------------------------------------------------------------------------------------------
 
 Consultar sobre ICMP y Ruteo 3. Práctica 2, ejercicio 18
+
+-----------------------------------------------------------------------------------------------------------
+
+¿Está correctamente armada la trama del Ejercicio 22 cuando obtengo las MAC deseadas? ¿Sería una trama de
+ethernet o cómo se le debería decir?
