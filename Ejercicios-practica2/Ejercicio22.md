@@ -48,4 +48,70 @@ Finalmente, luego de recibir la respuesta, PC1-HUB actualiza su tabla ARP y env�
 
 ---
 
+## Para analizar los paquetes del protocolo ARP realice las siguientes tareas:
+
+Para realizar todas las tareas a continuación, debemos iniciar la topología del archivo correspondiente (Ejercicio22-Diagrama.imn).
+
+### Ejecute el comando ifconfig -a o ip addr show en la PC1_hub
+
+Usando `ifconfig -a`.
+
+![ifconfig -a con PC1-HUB](/Recursos-practica2/ifconfig-a-PC1hub.png)
+
+Usando `ip addr show`.
+
+![ip addr show con PC1-HUB](/Recursos-practica2/ip-addr-show-PC1hub.png)
+
+### Luego ejecute el comando arp -n o ip -4 neigh show en la PC1_hub para ver su tabla ARP.
+
+Al ejecutar `arp -n` o `ip -4 neigh show` se observa la tabla ARP de PC1-HUB vacía.
+
+![tabla ARP de PC1-HUB](/Recursos-practica2/tabla-arp-vacia-PC1hub.png)
+
+### Monitoree el tráfico ARP desde la PC3_hub ejecutando tcpdump -i eth0 -p arp / tshark -i eth0 arp
+
+Usando `tcpdump -i eth0 -p arp`.
+
+![tcpdump para capturar tráfico ARP](/Recursos-practica2/tcpdump-arp-PC3hub-III.png)
+
+Usando `tshark -i eth0 arp`. Para que este comando funcione correctamente, debemos instalar previamente los paquetes de tshark como usuario root mediante el comando `sudo apt install tshark`.
+
+![tshark para capturar tráfico ARP](/Recursos-practica2/tshark-arp-PC3hub-III.png)
+
+### Envíe un ping desde la PC1_hub a PC2_hub y vuelva a observar la tabla ARP de PC1_hub.
+
+Luego de hacer un ping desde PC1-HUB hacia PC2-HUB se observa lo siguiente:
+
+![ping de PC1-HUB hacia PC2-HUB](/Recursos-practica2/ping-PC1hub-PC2hub.png)
+
+### Vea los resultados en la consola de PC3 a fin de observar las características de los paquetes ARP (MAC Origen, MAC Destino, etc).
+
+Resultados con `tcpdump -i eth0 -p arp`
+
+![Resultados tcpdump](/Recursos-practica2/tcpdump-arp-PC3hub-v.png)
+
+Resultados con `tshark -i eth0 arp`
+
+![Resultados tshark](/Recursos-practica2/tshark-arp-PC3hub-v.png)
+
+### Monitoree el tráfico ARP desde la PC3_SW(asumo que quiere decir PC3_HUB) ejecutando tcpdump -i eth0 -p arp / tshark -i eth0 arp
+
+### Haga un ping a la PC2_SW y vuelva a observar la tabla ARP de la PC1_SW (pienso que quisieron decir PC1_HUB si no sería igual).
+
+Luego de hacer un ping desde PC1-HUB hacia PC2-SW se observa lo siguiente:
+
+![ping de PC1-HUB hacia PC2-HUB](/Recursos-practica2/ping-PC1hub-PC2sw.png)
+
+### Vea los resultados en la consola de PC3_HUB a fin de observar cuáles son las diferencias respecto a lo observado en el punto (V) en cuanto a cuáles son los paquetes que se ven en este caso.
+
+Resultados con `tcpdump -i eth0 -p arp`
+
+![Resultados tcpdump](/Recursos-practica2/tcpdump-arp-PC3hub-VIII.png)
+
+Resultados con `tshark -i eth0 arp`
+
+![Resultados tshark](/Recursos-practica2/tshark-arp-PC3hub-VIII.png)
+
+---
+
 ![Figura 4](/Recursos-practica2/Ejercicio22-figura4.png)
