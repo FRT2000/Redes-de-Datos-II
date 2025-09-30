@@ -18,7 +18,7 @@ Primero PC1-HUB identificará si PC2-HUB se encuentra dentro de la misma red a p
 
 Luego de identificar que efectivamente se encuentra en la misma red, PC1-HUB enviará ARP Request de tipo broadcast preguntando por la MAC del dispositivo que tenga la dirección IP 10.0.0.21.
 
-![ARP Request PC1-HUB a PC2-HUB](/Recursos-practica2/ARP-Request-PC!hub-PC2hub.png)
+![ARP Request PC1-HUB a PC2-HUB](/Recursos-practica2/ARP-Request-PC1hub-PC2hub.png)
 
 PC2-HUB identifica que el mensaje es para él y responde con ARP Reply colocando su dirección MAC. Esta respuesta solamente es enviada a PC1-HUB.
 
