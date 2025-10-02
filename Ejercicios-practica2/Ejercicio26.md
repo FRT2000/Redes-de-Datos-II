@@ -1,4 +1,4 @@
-# Ejercicio 27
+# Ejercicio 26
 
 ##  Indique si las siguientes direcciones son de link-local, global-address, multicast, etc.
 - fe80::1/64
