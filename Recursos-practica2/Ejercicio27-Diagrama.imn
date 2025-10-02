@@ -36,7 +36,7 @@ node n3 {
     type router
     model PC
     network-config {
-	hostname PC
+	hostname NODO-A
 	!
 	interface eth1
 	 ip address 10.0.1.20/24
@@ -77,7 +77,7 @@ annotation a2 {
     label {eth0}
     labelcolor black
     fontfamily {KacstArt}
-    fontsize 10
+    fontsize {10}
     effects {bold}
     canvas c1
 }
@@ -95,7 +95,7 @@ annotation a4 {
     label {eth1}
     labelcolor black
     fontfamily {KacstArt}
-    fontsize 10
+    fontsize {10}
     effects {bold}
     canvas c1
 }
@@ -106,7 +106,7 @@ annotation a5 {
     label {00:1b:77:b1:49:a1}
     labelcolor black
     fontfamily {KacstArt}
-    fontsize 10
+    fontsize {10}
     effects {bold}
     canvas c1
 }
@@ -117,7 +117,7 @@ annotation a6 {
     label {c0:25:ee:ba:93:e1}
     labelcolor black
     fontfamily {KacstArt}
-    fontsize 10
+    fontsize {10}
     effects {bold}
     canvas c1
 }
@@ -128,7 +128,7 @@ annotation a7 {
     label {2818:4fde:5100:0:/64}
     labelcolor black
     fontfamily {KacstArt}
-    fontsize 10
+    fontsize {10}
     effects {bold}
     canvas c1
 }
@@ -139,7 +139,7 @@ annotation a8 {
     label {3ffe:8070:1011:100::/64}
     labelcolor black
     fontfamily {KacstArt}
-    fontsize 10
+    fontsize {10}
     effects {bold}
     canvas c1
 }
