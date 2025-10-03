@@ -38,25 +38,39 @@ lo más simplificada posible.
 -----------------------------------------------------------------------------------------------------------
 
 ¿Por qué al hacer un Traceroute desde PC "n9" hacia PC "n12" el viaje no es por la ruta que está por default?
+Eso es porque el traceroute muestra la interfaz desde la cual estás recibiendo la respuesta. En este caso
+el ruteo no es simétrico entonces no recibimos la respuesta por la misma interfaz por la cual ingresó el 
+mensaje original.
 
 -----------------------------------------------------------------------------------------------------------
 
 En el ejercicio 18, si se agrega una nueva red, al Router "n1" ¿Solamente bastaría con agregar a la tabla
 de ruteo de "n1" la nueva subred, ya que este conoce sus redes directamente conectadas?
+En este caso particular si, como todas las rutas por default son capaces de llegar a todas las redes 
+presentes, no haría falta realizar otra configuración.
 
 -----------------------------------------------------------------------------------------------------------
 
-Consultar sobre ICMP y Ruteo 3. Práctica 2, ejercicio 18
+Consultar sobre ICMP y Ruteo 3. Práctica 2, ejercicio 18.
+Debo generar un loop entre los 3 routers de forma que el paquete nunca llegue a destino.
 
 -----------------------------------------------------------------------------------------------------------
 
 ¿Está correctamente armada la trama del Ejercicio 22 cuando obtengo las MAC deseadas? ¿Sería una trama de
 ethernet o cómo se le debería decir?
 
+Si, es correcto la forma en la que está armada, ya que una corresponde a la trama de Ethernet y la otra
+a la trama IP.
+
 -----------------------------------------------------------------------------------------------------------
 
 ¿Los enunciados VI y VII se referían a PC3_HUB y PC1_HUB?
+No, los enunciados se refieren a observar cómo se reciben los mensajes ARP cuando tenemos presente un HUB 
+y un SWITCH
 
 -----------------------------------------------------------------------------------------------------------
 
 ¿A qué se están refiriendo en el Ejercicio 27?
+Se refierena a las direcciones propias que podría asignarse el dispositivo. En este caso podría hacer una 
+LINK-LOCAL y una GLOBAL-UNICAST, ya que cuenta con Routers Advertisement que nos proporcionan el prefijo /64
+de red.

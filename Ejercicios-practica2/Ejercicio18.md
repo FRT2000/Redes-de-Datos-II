@@ -127,6 +127,18 @@ Verificando con el comando **traceroute**, se obtienen los siguientes caminos:
 
 ---
 
+## Mantenimiento de la red: Suponiendo que en el Router n1 se agregó una interfaz de red con la dirección IP 163.10.10.1/24:
+
+### Identifique los cambios que deberían ser necesarios al ruteo estático para que todas las PCs puedan comunicarse con hosts en la nueva red.
+
+Para este caso paricular sólo bastaría con agregar la nueva interfaz de red al Router "n1", ya que con la configuración previa que hemos realizado de las rutas por default, todos los dipositivos tienen la capacidad de comunicarse entre si.
+
+### En base a lo anterior, ¿qué puede decir respecto del mantenimiento del ruteo en una red que tiene más de 20 routers?
+
+En el caso de agregar más routers dentro de la topología deberíamos repetir el proceso de ruteo estático por cada uno, lo que dificultaría el proceso a medida de que aumentamos la cantidad. Lo recomendable en estos casos, es requerir a métodos como ruteo dinámico.
+
+---
+
 ## ICMP y RUTEO 1: Desde la PC n6, realice un ping a la dirección IP 5.5.5.5
 
 ### ¿Qué indica el mensaje de error recibido?, ¿Quién lo envía?
