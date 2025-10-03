@@ -1,2 +1,6 @@
 # Archivos y carpetas ignorados por Git
 Ejercicios-practica2/preguntas.txt
+
+# Archivos de respaldo de draw.io
+*.drawio.bkp
+.$*.bkp
