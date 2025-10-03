@@ -166,4 +166,4 @@ El mensaje de error indica que el host de destino (10.0.5.23) es inalcanzable po
 
 ### ¿Qué indica el mensaje de error recibido?, ¿Quién lo envía?
 
-
+Sucede lo mismo que para el caso del inciso "ICMP y RUTEO 1", solo que en esta ocasión el que reenvía el mensaje de error es el gateway perteneciente a la red del host "n6".

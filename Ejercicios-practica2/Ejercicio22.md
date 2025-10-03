@@ -94,24 +94,28 @@ Resultados con `tshark -i eth0 arp`
 
 ![Resultados tshark](/Recursos-practica2/tshark-arp-PC3hub-v.png)
 
-### Monitoree el tráfico ARP desde la PC3_SW(asumo que quiere decir PC3_HUB) ejecutando tcpdump -i eth0 -p arp / tshark -i eth0 arp
+### Monitoree el tráfico ARP desde la PC3_SW ejecutando tcpdump -i eth0 -p arp / tshark -i eth0 arp
 
-### Haga un ping a la PC2_SW y vuelva a observar la tabla ARP de la PC1_SW (pienso que quisieron decir PC1_HUB si no sería igual).
+### Haga un ping a la PC2_SW y vuelva a observar la tabla ARP de la PC1_SW.
 
-Luego de hacer un ping desde PC1-HUB hacia PC2-SW se observa lo siguiente:
+Luego de hacer un ping desde PC1-SW hacia PC2-SW se observa lo siguiente:
 
-![ping de PC1-HUB hacia PC2-HUB](/Recursos-practica2/ping-PC1hub-PC2sw.png)
+![ping de PC2-SW hacia PC2-SW](/Recursos-practica2/ping-PC1sw-PC2sw.png)
 
 ### Vea los resultados en la consola de PC3_HUB a fin de observar cuáles son las diferencias respecto a lo observado en el punto (V) en cuanto a cuáles son los paquetes que se ven en este caso.
 
-Resultados con `tcpdump -i eth0 -p arp`
+Resultados con `tshark -i eth0 arp`. Observando el tráfico capturado en PC3-SW
 
-![Resultados tcpdump](/Recursos-practica2/tcpdump-arp-PC3hub-VIII.png)
+![Resultados tshark](/Recursos-practica2/tshark-arp-PC3sw-VIII.png)
 
-Resultados con `tshark -i eth0 arp`
+**Comparativa entre ambos escenarios**
 
-![Resultados tshark](/Recursos-practica2/tshark-arp-PC3hub-VIII.png)
-
+- Escenario con HUB (PC3-HUB):
+  - En la red conectada por un Hub, la PC que realiza la captura (PC3-HUB) ve toda la conversación ARP entre los otros dos hosts, incluyendo las tramas de Unicast (las respuestas ARP). Esto se debe a que el Hub duplica todas las tramas a todos los nodos, creando un único dominio de colisión y difusión.
+- Escenario con SWITCH (PC3-SW):
+  - Solicitud ARP (Broadcast): La solicitud inicial es una trama de Broadcast (dirigida a todas las MAC), por  lo que el Switch debe enviarla a todos los puertos (incluido el de PC3-SW). Por eso, el paquete se ve.
+  - Respuesta ARP (Unicast): La respuesta es una trama de Unicast (dirigida específicamente a la MAC del host que preguntó). Como el Switch ya ha aprendido la ubicación de esa MAC, filtra la respuesta y la envía directamente al puerto del destinatario. La PC de captura (PC3-SW) no la ve.
+  
 ---
 
 ## Figura 4
