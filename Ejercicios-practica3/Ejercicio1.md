@@ -19,7 +19,9 @@ Contamos los 7 bits de derecha a izquierda para saber la parte que corresponde a
 65.0.0.0/24 -> red original
 
 0100 0001.0000 0000.0000 0000.0|**000 0000**| -> bits tomados para los 80 hosts.
+
 |**0100 0001.0000 0000.0000 0000**|.0000 0000 -> bits de red original
+
 0100 0001.0000 0000.0000 0000.|**0**|000 0000 -> bits tomados para subred
 
 Ahora colocamos en 1 (uno) cada bit adicional que hayamos tomado para subred, esto nos determinará la dirección que será asignada a la red para 80 hosts.
