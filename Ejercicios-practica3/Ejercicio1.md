@@ -101,7 +101,7 @@ Finalmente la red `65.0.0.0/28` queda libre para seguir subneteando.
 
 ---
 
-#### Segundo red de 10 hosts
+#### Segunda red de 10 hosts
 
 Partimos de la red 65.0.0.0/28 la cual queda libre para seguir con el mismo procedimiento.
 
@@ -119,7 +119,7 @@ Por lo tanto el resultado final será:
 
 65.0.0.32/28 -> **dirección IP asignada para los segundos 10 hosts.**
 
-Si nos pidieran 2 redes más para otros 10 hosts cada una, repetiríamos el proceso de ir restando uno a la red anterior. En caso de necesitar más de 2 redes con 10 hosts cada una, a partir de las asignaciones anteriores no alcanzarían las direcciones. 
+Si nos pidieran 2 redes más para otros 10 hosts cada una, repetiríamos el proceso de ir restando uno a la red anterior. En caso de necesitar más de 2 redes con 10 hosts cada una a partir de las asignaciones anteriores, no alcanzarían las direcciones. 
 
 Finalmente la red `65.0.0.0/28` queda disponible para seguir subneteando.
 
