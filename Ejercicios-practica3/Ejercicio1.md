@@ -29,9 +29,9 @@ Ahora colocamos en 1 (uno) cada bit adicional que hayamos tomado para subred, es
 No debemos olvidarnos de calcular la nueva máscara de subred, la cual contempla los bits de la red sin subnetear más los bits que se han tomado para subred, en este caso tenemos 25 bits que nos sirven para identificar la red.
 Por lo tanto el resultado final será:
 
-65.0.0.128/25 -> dirección IP asignada para los 80 hosts.
+65.0.0.128/25 -> **dirección IP asignada para los 80 hosts.**
 
-Finalmente la red 65.0.0.0/25 queda libre para seguir subneteando.
+Finalmente la red `65.0.0.0/25` queda libre para seguir subneteando.
 
 ---
 
@@ -40,6 +40,7 @@ Finalmente la red 65.0.0.0/25 queda libre para seguir subneteando.
 Partimos de la red 65.0.0.0/25 la cual queda libre para seguir con el mismo procedimiento.
 
 En este caso la red necesita 40 hosts. Para esto se necesitarán 6 bits designados para hosts, dado que:
+
 $2^{6}$ - 2 = 62 hosts.
 
 Contamos los 6 bits de derecha a izquierda para saber la parte que corresponde a las direcciones de hosts. Luego contamos cuántos bits hemos tomado para crear subredes a partir de la red anterior, la cual ha quedado libre después de asignar la dirección para los 80 hosts.
@@ -47,7 +48,9 @@ Contamos los 6 bits de derecha a izquierda para saber la parte que corresponde a
 65.0.0.0/25 -> red de la cual iniciamos el subnetting
 
 0100 0001.0000 0000.0000 0000.00|**00 0000**| -> bits tomados para los 40 hosts.
+
 |**0100 0001.0000 0000.0000 0000.0**|000 0000 -> bits de red
+
 0100 0001.0000 0000.0000 0000.0|**0**|00 0000 -> bits tomados para subred
 
 Ahora colocamos en 1 (uno) cada bit adicional que hayamos tomado para subred, esto nos determinará la dirección que será asignada a la red para 40 hosts.
@@ -55,11 +58,12 @@ Ahora colocamos en 1 (uno) cada bit adicional que hayamos tomado para subred, es
 0100 0001.0000 0000.0000 0000.0|**1**|00 0000 -> bits tomados para subred colocados en 1
 
 No debemos olvidarnos de calcular la nueva máscara de subred, la cual contempla los bits de la red que tomamos como punto de partida más los bits que se han tomado para subred, en este caso tenemos 26 bits que nos sirven para identificar la red.
+
 Por lo tanto el resultado final será:
 
-65.0.0.64/26 -> dirección IP asignada para los 40 hosts.
+65.0.0.64/26 -> **dirección IP asignada para los 40 hosts.**
 
-Finalmente la red 65.0.0.0/26 queda libre para seguir subneteando.
+Finalmente la red `65.0.0.0/26` queda libre para seguir subneteando.
 
 ---
 
