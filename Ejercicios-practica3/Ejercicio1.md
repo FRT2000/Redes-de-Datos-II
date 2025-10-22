@@ -131,3 +131,350 @@ Finalmente la red `65.0.0.0/28` queda disponible para seguir subneteando.
 - 20(veinte) redes de 300 hosts.
 - 50(cincuenta) redes de 200 hosts.
 - Una red de backbone para unir cada uno de los router de las redes anteriores (74 direcciones).
+
+#### Primera red de 2000 hosts
+
+Empezamos por la red que necesita 2000 hosts. Para esto se necesitarán 11 bits designados para hosts, dado que:
+$2^{11}$ - 2 = 2046 hosts.
+
+Contamos los 11 bits de derecha a izquierda para saber la parte que corresponde a las direcciones de hosts. Luego contamos cuántos bits hemos tomado para crear subredes a partir de la red original sin subnetear.
+
+100.0.0.0/16 -> red original
+
+0110 0100.0000 0000.0000 0|**000.0000 0000**| -> bits tomados para los 2000 hosts.
+
+|**0110 0100.0000 0000**|.0000 0000.0000 0000 -> bits de red original
+
+0110 0100.0000 0000.|**0000 0**|000.0000 0000 -> bits tomados para subred
+
+Ahora colocamos en 1 (uno) cada bit adicional que hayamos tomado para subred, esto nos determinará la dirección que será asignada a la red para 2000 hosts. Con esto logramos asignar la última red posible dentro de ese espacio de direcciones. 
+
+0110 0100.0000 0000.|**1111 1**|000.0000 0000 -> bits tomados para subred colocados en 1
+
+No debemos olvidarnos de calcular la nueva máscara de subred, la cual contempla los bits de la red sin subnetear más los bits que se han tomado para subred, en este caso tenemos 21 bits que nos sirven para identificar la red.
+Por lo tanto el resultado final será:
+
+100.0.248.0/21 -> **dirección IP asignada para los 2000 hosts.**
+
+Finalmente la red `100.0.0.0/21` queda libre para seguir subneteando.
+
+---
+
+#### Segunda red de 2000 hosts
+
+Partimos de la red 100.0.0.0/21 la cual queda libre para seguir con el mismo procedimiento.
+
+Ya hemos reservado la última dirección disponible para los primeros 2000 hosts.
+
+0110 0100.0000 0000.|**1111 1**|000.0000 0000 -> última red posible en el espacio de direcciones.
+
+Lo que debemos hacer es restarle 1 (uno) a esa dirección de red y de esta manera obtener la anteúltima red posible del espacio de direcciones.
+
+0110 0100.0000 0000.|**1111 0**|000.0000 0000 -> anteúltima red posible en el espacio de direcciones.
+
+Por lo tanto el resultado final será:
+
+100.0.240.0/21 -> **dirección IP asignada para los segundos 2000 hosts.** 
+
+Finalmente la red `100.0.0.0/21` queda disponible para seguir subneteando.
+
+---
+
+#### Primera red de 500 hosts
+
+Partimos de la red 100.0.0.0/21 la cual queda libre para seguir con el mismo procedimiento.
+
+En este caso la red necesita 500 hosts. Para esto se necesitarán 9 bits designados para hosts, dado que:
+
+$2^{9}$ - 2 = 510 hosts.
+
+Contamos los 9 bits de derecha a izquierda para saber la parte que corresponde a las direcciones de hosts. Luego contamos cuántos bits hemos tomado para crear subredes a partir de la red original sin subnetear.
+
+100.0.0.0/16 -> red original
+
+0110 0100.0000 0000.0000 000|**0.0000 0000**| -> bits tomados para los 500 hosts.
+
+|**0110 0100.0000 0000**|.0000 0000.0000 0000 -> bits de red original
+
+0110 0100.0000 0000.|**0000 000**|0.0000 0000 -> bits tomados para subred
+
+Ahora colocamos en 1 (uno) cada bit adicional que hayamos tomado para subred, esto nos determinará la dirección que será asignada a la red para 2000 hosts. Con esto logramos asignar la última red posible dentro de ese espacio de direcciones. 
+
+0110 0100.0000 0000.|**1111 111**|0.0000 0000 -> bits tomados para subred colocados en 1
+
+No debemos olvidarnos de calcular la nueva máscara de subred, la cual contempla los bits de la red sin subnetear más los bits que se han tomado para subred, en este caso tenemos 23 bits que nos sirven para identificar la red.
+Por lo tanto el resultado final será:
+
+100.0.254.0/23 -> **dirección IP asignada para los 500 hosts.**
+
+Finalmente la red `100.0.0.0/23` queda libre para seguir subneteando.
+
+---
+
+#### Segunda red de 500 hosts
+
+Partimos de la red 100.0.0.0/23 la cual queda libre para seguir con el mismo procedimiento.
+
+Ya hemos reservado la última dirección disponible para los primeros 500 hosts.
+
+0110 0100.0000 0000.|**1111 111**|0.0000 0000 -> última red posible en el espacio de direcciones.
+
+Lo que debemos hacer es restarle 1 (uno) a esa dirección de red y de esta manera obtener la anteúltima red posible del espacio de direcciones.
+
+0110 0100.0000 0000.|**1111 110**|0.0000 0000 -> anteúltima red posible en el espacio de direcciones.
+
+Por lo tanto el resultado final será:
+
+100.0.252.0/23 -> **dirección IP asignada para los segundos 500 hosts.** 
+
+Finalmente la red `100.0.0.0/23` queda disponible para seguir subneteando.
+
+---
+
+#### Red número 1 de 300 host
+
+Partimos de la red 100.0.0.0/23 la cual queda libre para seguir con el mismo procedimiento.
+
+En este caso la red necesita 300 hosts. Para esto se necesitarán 9 bits designados para hosts, dado que:
+
+$2^{9}$ - 2 = 510 hosts.
+
+Podemos observar que necesitamos la misma cantidad de bits que para el caso de 500 hosts. Por lo tanto, seguimos asignando las direcciones de forma decremental, restando 1 (uno) al espacio destinado para subred.
+
+0110 0100.0000 0000.|**1111 110**|0.0000 0000 -> Última red tomada para los 500 hosts.
+
+0110 0100.0000 0000.|**1111 101**|0.0000 0000 -> Decrementando en 1 (uno) la dirección de subred anterior.
+
+Por lo tanto el resultado final será:
+
+100.0.250.0/23 -> **dirección IP asignada para la red número 1 de 300 hosts.**
+
+---
+
+#### Red número 2 de 300 host
+
+0110 0100.0000 0000.|**1111 101**|0.0000 0000 -> Última red tomada para los 300 hosts.
+
+0110 0100.0000 0000.|**1111 100**|0.0000 0000 -> Decrementando en 1 (uno) la dirección de subred anterior.
+
+Por lo tanto el resultado final será:
+
+100.0.248.0/23 -> **dirección IP asignada para la red número 2 de 300 hosts.**
+
+---
+
+#### Red número 3 de 300 host
+
+0110 0100.0000 0000.|**1111 100**|0.0000 0000 -> Última red tomada para los 300 hosts.
+
+0110 0100.0000 0000.|**1111 011**|0.0000 0000 -> Decrementando en 1 (uno) la dirección de subred anterior.
+
+Por lo tanto el resultado final será:
+
+100.0.246.0/23 -> **dirección IP asignada para la red número 3 de 300 hosts.**
+
+---
+
+#### Red número 4 de 300 host
+
+0110 0100.0000 0000.|**1111 011**|0.0000 0000 -> Última red tomada para los 300 hosts.
+
+0110 0100.0000 0000.|**1111 010**|0.0000 0000 -> Decrementando en 1 (uno) la dirección de subred anterior.
+
+Por lo tanto el resultado final será:
+
+100.0.244.0/23 -> **dirección IP asignada para la red número 4 de 300 hosts.**
+
+---
+
+#### Red número 5 de 300 host
+
+0110 0100.0000 0000.|**1111 010**|0.0000 0000 -> Última red tomada para los 300 hosts.
+
+0110 0100.0000 0000.|**1111 001**|0.0000 0000 -> Decrementando en 1 (uno) la dirección de subred anterior.
+
+Por lo tanto el resultado final será:
+
+100.0.242.0/23 -> **dirección IP asignada para la red número 5 de 300 hosts.**
+
+---
+
+#### Red número 6 de 300 host
+
+0110 0100.0000 0000.|**1111 001**|0.0000 0000 -> Última red tomada para los 300 hosts.
+
+0110 0100.0000 0000.|**1111 000**|0.0000 0000 -> Decrementando en 1 (uno) la dirección de subred anterior.
+
+Por lo tanto el resultado final será:
+
+100.0.240.0/23 -> **dirección IP asignada para la red número 6 de 300 hosts.**
+
+---
+
+#### Red número 7 de 300 host
+
+0110 0100.0000 0000.|**1111 000**|0.0000 0000 -> Última red tomada para los 300 hosts.
+
+0110 0100.0000 0000.|**1110 111**|0.0000 0000 -> Decrementando en 1 (uno) la dirección de subred anterior.
+
+Por lo tanto el resultado final será:
+
+100.0.238.0/23 -> **dirección IP asignada para la red número 7 de 300 hosts.**
+
+---
+
+#### Red número 8 de 300 host
+
+0110 0100.0000 0000.|**1110 111**|0.0000 0000 -> Última red tomada para los 300 hosts.
+
+0110 0100.0000 0000.|**1110 110**|0.0000 0000 -> Decrementando en 1 (uno) la dirección de subred anterior.
+
+Por lo tanto el resultado final será:
+
+100.0.236.0/23 -> **dirección IP asignada para la red número 8 de 300 hosts.**
+
+---
+
+#### Red número 9 de 300 host
+
+0110 0100.0000 0000.|**1110 110**|0.0000 0000 -> Última red tomada para los 300 hosts.
+
+0110 0100.0000 0000.|**1110 101**|0.0000 0000 -> Decrementando en 1 (uno) la dirección de subred anterior.
+
+Por lo tanto el resultado final será:
+
+100.0.234.0/23 -> **dirección IP asignada para la red número 9 de 300 hosts.**
+
+---
+
+#### Red número 10 de 300 host
+
+0110 0100.0000 0000.|**1110 101**|0.0000 0000 -> Última red tomada para los 300 hosts.
+
+0110 0100.0000 0000.|**1110 100**|0.0000 0000 -> Decrementando en 1 (uno) la dirección de subred anterior.
+
+Por lo tanto el resultado final será:
+
+100.0.232.0/23 -> **dirección IP asignada para la red número 10 de 300 hosts.**
+
+---
+
+#### Red número 11 de 300 host
+
+0110 0100.0000 0000.|**1110 100**|0.0000 0000 -> Última red tomada para los 300 hosts.
+
+0110 0100.0000 0000.|**1110 011**|0.0000 0000 -> Decrementando en 1 (uno) la dirección de subred anterior.
+
+Por lo tanto el resultado final será:
+
+100.0.230.0/23 -> **dirección IP asignada para la red número 11 de 300 hosts.**
+
+---
+
+#### Red número 12 de 300 host
+
+0110 0100.0000 0000.|**1110 011**|0.0000 0000 -> Última red tomada para los 300 hosts.
+
+0110 0100.0000 0000.|**1110 010**|0.0000 0000 -> Decrementando en 1 (uno) la dirección de subred anterior.
+
+Por lo tanto el resultado final será:
+
+100.0.228.0/23 -> **dirección IP asignada para la red número 12 de 300 hosts.**
+
+---
+
+#### Red número 13 de 300 host
+
+0110 0100.0000 0000.|**1110 010**|0.0000 0000 -> Última red tomada para los 300 hosts.
+
+0110 0100.0000 0000.|**1110 001**|0.0000 0000 -> Decrementando en 1 (uno) la dirección de subred anterior.
+
+Por lo tanto el resultado final será:
+
+100.0.226.0/23 -> **dirección IP asignada para la red número 13 de 300 hosts.**
+
+---
+
+#### Red número 14 de 300 host
+
+0110 0100.0000 0000.|**1110 001**|0.0000 0000 -> Última red tomada para los 300 hosts.
+
+0110 0100.0000 0000.|**1110 000**|0.0000 0000 -> Decrementando en 1 (uno) la dirección de subred anterior.
+
+Por lo tanto el resultado final será:
+
+100.0.224.0/23 -> **dirección IP asignada para la red número 14 de 300 hosts.**
+
+---
+
+#### Red número 15 de 300 host
+
+0110 0100.0000 0000.|**1110 000**|0.0000 0000 -> Última red tomada para los 300 hosts.
+
+0110 0100.0000 0000.|**1101 111**|0.0000 0000 -> Decrementando en 1 (uno) la dirección de subred anterior.
+
+Por lo tanto el resultado final será:
+
+100.0.222.0/23 -> **dirección IP asignada para la red número 15 de 300 hosts.**
+
+---
+
+#### Red número 16 de 300 host
+
+0110 0100.0000 0000.|**1101 111**|0.0000 0000 -> Última red tomada para los 300 hosts.
+
+0110 0100.0000 0000.|**1101 110**|0.0000 0000 -> Decrementando en 1 (uno) la dirección de subred anterior.
+
+Por lo tanto el resultado final será:
+
+100.0.220.0/23 -> **dirección IP asignada para la red número 16 de 300 hosts.**
+
+---
+
+#### Red número 17 de 300 host
+
+0110 0100.0000 0000.|**1101 110**|0.0000 0000 -> Última red tomada para los 300 hosts.
+
+0110 0100.0000 0000.|**1101 101**|0.0000 0000 -> Decrementando en 1 (uno) la dirección de subred anterior.
+
+Por lo tanto el resultado final será:
+
+100.0.218.0/23 -> **dirección IP asignada para la red número 17 de 300 hosts.**
+
+---
+
+#### Red número 18 de 300 host
+
+0110 0100.0000 0000.|**1101 101**|0.0000 0000 -> Última red tomada para los 300 hosts.
+
+0110 0100.0000 0000.|**1101 100**|0.0000 0000 -> Decrementando en 1 (uno) la dirección de subred anterior.
+
+Por lo tanto el resultado final será:
+
+100.0.216.0/23 -> **dirección IP asignada para la red número 18 de 300 hosts.**
+
+---
+
+#### Red número 19 de 300 host
+
+0110 0100.0000 0000.|**1101 100**|0.0000 0000 -> Última red tomada para los 300 hosts.
+
+0110 0100.0000 0000.|**1101 011**|0.0000 0000 -> Decrementando en 1 (uno) la dirección de subred anterior.
+
+Por lo tanto el resultado final será:
+
+100.0.214.0/23 -> **dirección IP asignada para la red número 19 de 300 hosts.**
+
+---
+
+#### Red número 20 de 300 host
+
+0110 0100.0000 0000.|**1101 011**|0.0000 0000 -> Última red tomada para los 300 hosts.
+
+0110 0100.0000 0000.|**1101 010**|0.0000 0000 -> Decrementando en 1 (uno) la dirección de subred anterior.
+
+Por lo tanto el resultado final será:
+
+100.0.212.0/23 -> **dirección IP asignada para la red número 20 de 300 hosts.**
+
+---
