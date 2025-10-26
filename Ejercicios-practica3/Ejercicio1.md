@@ -97,7 +97,7 @@ Por lo tanto el resultado final será:
 
 65.0.0.48/28 -> **dirección IP asignada para los primeros 10 hosts.**
 
-Finalmente las direcciones: `65.0.0.0/28` hasta la `65.0.0.47/28` quedan libre para seguir subneteando.
+Finalmente las direcciones: `65.0.0.0/28` hasta la `65.0.0.47/28` quedan libres para seguir subneteando.
 
 ---
 
@@ -172,7 +172,7 @@ Por lo tanto el resultado final será:
 
 100.0.240.0/21 -> **dirección IP asignada para los segundos 2000 hosts.** 
 
-Finalmente las redes a partir de `100.0.0.0/21` hasta `100.0.239.255/21` quedan libres para seguir subneteando.
+Finalmente las direcciones a partir de `100.0.0.0/21` hasta `100.0.239.255/21` quedan libres para seguir subneteando.
 
 ---
 
