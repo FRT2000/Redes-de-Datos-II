@@ -1,6 +1,6 @@
 # Ejercicio 4
 
-## IPv6: Dada la topologı a de la figura 1 cargar en la herramienta de simulación el archivo: ipv6-base2-2023.imn
+## IPv6: Dada la topología de la figura 1 cargar en la herramienta de simulación el archivo: ipv6-base2-2023.imn
 
 ![Diagrama ejercicio 4](/Recursos-practica3/ipv6-base2-2023.png)
 
@@ -28,7 +28,7 @@ Realizamos el ejemplo con el router n1:
 
 ![Script servicio StaticRoute](/Recursos-practica3/script-servicio-StaticRoute.png)
 
-- Colocar el comando `ip -f inet6 route add default via 2001:db8::129` dentro de la terminal del router al iniciar la topología. Para esto debemos deshbilitar los servicios anteriores "DefaultRoute" y "StaticRoute". Luego podemos consultar la tabla de ruteo con el comando `ip -6 route`. Debemos recordar que estos cambios no se guardarán al detener la topología e iniciarla nuevamente.
+- Colocar el comando `ip -f inet6 route add default via 2001:db8::129` dentro de la terminal del router al iniciar la topología. Para esto debemos deshabilitar los servicios anteriores "DefaultRoute" y "StaticRoute". Luego podemos consultar la tabla de ruteo con el comando `ip -6 route`. Debemos recordar que estos cambios no se guardarán al detener la topología e iniciarla nuevamente.
 
 ![Terminal de router n2](/Recursos-practica3/servicio-StaticRoute.png)
 
@@ -42,7 +42,7 @@ Consultamos las tablas de ruteo de host "n5" y router "n1" con el comando `ip -6
 
 ![Tabla de ruteo n1](/Recursos-practica3/tabla-ruteo-n1.png)
 
-Para habilitar el forwardin IPv6 podemos hacerlo desde la terminal propia de cada nodo, mediante el servicio "IPForward", o configurándolo dentro del script dell servicio "StaticRoute", el cual tiene como objetivo establecer nuestras configuraciones personales.
+Para habilitar el forwarding IPv6 podemos hacerlo desde la terminal propia de cada nodo, mediante el servicio "IPForward", o configurándolo dentro del script dell servicio "StaticRoute", el cual tiene como objetivo establecer nuestras configuraciones personales.
 
 - Si habilitamos el servicio IPForward, veremos que dentro del script, se inicializa por defecto el forwarding para IPv6.
 
