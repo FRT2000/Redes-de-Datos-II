@@ -35,7 +35,7 @@ Calcular el desplazamiento (Offset)
 Armar los datagramas
 
 | # Fragmento | Payload (Datos) | Longitud Total (Paquete) | Bit MF | Bit DF | Offset (Valor) |
-| :--- | :--- | :--- | :--- | :--- |
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | 1 | 176 bytes | 176 bytes + 20 bytes = 196 bytes | 1 | 0 | 0 |
 | 2 | 176 bytes | 176 bytes + 20 bytes = 196 bytes | 1 | 0 | 22 |
 | 3 | 176 bytes | 176 bytes + 20 bytes = 196 bytes | 1 | 0 | 44 |
