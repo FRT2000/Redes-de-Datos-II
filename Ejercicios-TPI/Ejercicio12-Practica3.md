@@ -2,6 +2,67 @@
 
 ## Resolver el direccionamiento IPv4 con el bloque IP asignado. Considerar los enlaces punto a punto salvo la red de n9, n10, n11, n13 y n14. Para la red de n9 considerar 40 hosts; para la red de n11 y n13, 328 hosts y para la red de n14, 500 hosts.
 
+![Diagrama Ejercicio 12 Práctica 3](/Recursos-TPI/Ejercicio12-Practica3-Diagrama.imn)
+
+---
+
+### Direcciones IPv4 asignadas con el bloque asignado 46.90.16.0/21
+
+El objetivo es dividir el bloque 46.90.16.0/21 usando VLSM (Máscara de Subred de Longitud Variable) para cubrir todas las necesidades de la topología.
+
+Primero identificamos los requerimientos de cada subred y el prefijo que se le debe asignar
+
+| Red | Requerimiento (Hosts) | Bits necesarios | Prefijo Asignado |
+| :--- | :--- | :--- | :--- |
+| Red n14 | 500 hosts | 9 | **/23** |
+| Red n11/n13 | 328 hosts | 9 | **/23** |
+| Red n9 | 40 hosts | 6 | **/26** |
+| Red n10 | 2 hosts | 2 | **/30** |
+| 11 Enlaces Punto a Punto | 2 hosts c/u | 2 | **/30** (x11) |
+
+### Red n14 de 500 hosts
+
+46.90.16.0/21 -> red original
+
+0010 1110.0101 1010.0001 000|**0.0000 0000**| -> bits tomados para los 500 hosts.
+
+|**0010 1110.0101 1010.0001 0**|000.0000 0000 -> bits de red original
+
+0010 1110.0101 1010.0001 0|**00**|0.0000 0000 -> bits tomados para subred 
+
+0010 1110.0101 1010.0001 0|**11**|0.0000 0000 -> bits tomados para subred colocados en 1
+
+Nueva máscara de subred /23
+
+46.90.22.0/23 -> **Dirección IP asignada para la red n14.**
+
+Finalmente las direcciones: `46.90.16.0/23` hasta `46.90.21.255/23` quedan libres para seguir subneteando.
+
+### Red n11/n13 de 328 hosts
+
+Nuevamente necesitamos 9 bits entonces le asiganamos la próxima red disponible decrementando en 1
+
+0010 1110.0101 1010.0001 0|**10**|0.0000 0000 -> bits tomados para subred colocados en 1
+
+46.90.20.0/23 -> **Dirección IP asignada para la red n11/n13.**
+
+Finalmente las direcciones: `46.90.16.0/23` hasta `46.90.19.255/23` quedan libres para seguir subneteando.
+
+### Red n9 de 40 hosts
+
+46.90.19.255/23 -> Red de la cual partimos.
+
+0010 1110.0101 1010.0001 0011.1111 1111 -> red expresada en bits.
+
+0010 1110.0101 1010.0001 0011.11|**00 0000**| -> Colocamos en cero los bits que necesitamos para hosts.
+
+0010 1110.0101 1010.0001 001|**1.11**|00 0000 -> Bits tomados para subred.
+
+La nueva máscara de subred será /26
+
+46.90.19.192/26 -> **Dirección IP asignada para la red n9.**
+
+
 a) Configurar la red detrás de n5 (n5,n13,n11) y la Red C con el bloque IPv6 asignado.
 b) Resolver con ruteo estático la topología.
 c) Alternativo: Asignar a n10 una IP según RFC-1918 y configurar NAT en n1 para que

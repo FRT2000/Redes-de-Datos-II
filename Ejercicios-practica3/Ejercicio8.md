@@ -14,6 +14,6 @@
 
 Ejercicio realizado dentro del archivo "ejercicio8.py" dentro de la carpeta "Recursos-practica3".
 
-[Ejercicio 8](../Recursos-practica3/ejercicio8.py)
+[Ejercicio 8](/Recursos-practica3/ejercicio8.py)
 
 Créditos al señor: **Bautista Iacobucci**
