@@ -106,6 +106,14 @@ Nuevamente necesitamos 2 bits entonces le asiganamos la próxima red disponible 
 
 46.90.19.144/30 -> **Dirección IP asignada para enlace punto a punto número 11.**
 
+Finalmente las direcciones: `46.90.16.0/30` hasta `46.90.19.143/30` quedan libres para seguir subneteando.
+
+---
+
+La asignación de cada espacio de direcciones a partir del bloque IPv4 asignado es el siguiente:
+
+![Bloques Asignados Ejercicio 12 Práctica 3](/Recursos-TPI/Ejercicio12-Practica3-Bloques-Asignados.png)
+
 
 a) Configurar la red detrás de n5 (n5,n13,n11) y la Red C con el bloque IPv6 asignado.
 b) Resolver con ruteo estático la topología.
