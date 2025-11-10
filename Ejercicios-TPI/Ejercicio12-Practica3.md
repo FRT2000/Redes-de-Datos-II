@@ -2,7 +2,7 @@
 
 ## Resolver el direccionamiento IPv4 con el bloque IP asignado. Considerar los enlaces punto a punto salvo la red de n9, n10, n11, n13 y n14. Para la red de n9 considerar 40 hosts; para la red de n11 y n13, 328 hosts y para la red de n14, 500 hosts.
 
-![Diagrama Ejercicio 12 Práctica 3](/Recursos-TPI/Ejercicio12-Practica3-Diagrama.imn)
+![Diagrama Ejercicio 12 Práctica 3](/Recursos-TPI/Ejercicio12-Practica3-Diagrama.png)
 
 ---
 
@@ -42,7 +42,7 @@ Finalmente las direcciones: `46.90.16.0/23` hasta `46.90.21.255/23` quedan libre
 
 Nuevamente necesitamos 9 bits entonces le asiganamos la próxima red disponible decrementando en 1
 
-0010 1110.0101 1010.0001 0|**10**|0.0000 0000 -> bits tomados para subred colocados en 1
+0010 1110.0101 1010.0001 0|**10**|0.0000 0000 -> bits tomados para subred
 
 46.90.20.0/23 -> **Dirección IP asignada para la red n11/n13.**
 
@@ -61,6 +61,50 @@ Finalmente las direcciones: `46.90.16.0/23` hasta `46.90.19.255/23` quedan libre
 La nueva máscara de subred será /26
 
 46.90.19.192/26 -> **Dirección IP asignada para la red n9.**
+
+Finalmente las direcciones: `46.90.16.0/26` hasta `46.90.19.191/26` quedan libres para seguir subneteando.
+
+### Red n10 de 2 hosts
+
+46.90.19.191/26 -> Red de la cual partimos.
+
+0010 1110.0101 1010.0001 0011.1011 1111 -> red expresada en bits
+
+0010 1110.0101 1010.0001 0011.1011 11|**00**| -> Colocamos en cero los bits que necesitamos para hosts.
+
+0010 1110.0101 1010.0001 0011.10|**11 11**|00 -> Bits tomados para subred.
+
+La nueva máscara de subred será /30
+
+46.90.19.188/30 -> **Dirección IP asignada para la red n10.**
+
+Finalmente las direcciones: `46.90.16.0/30` hasta `46.90.19.187/30` quedan libres para seguir subneteando.
+
+### Enlaces punto a punto
+
+Nuevamente necesitamos 2 bits entonces le asiganamos la próxima red disponible de forma decremental
+
+46.90.19.184/30 -> **Dirección IP asignada para enlace punto a punto número 1.**
+
+46.90.19.180/30 -> **Dirección IP asignada para enlace punto a punto número 2.**
+
+46.90.19.176/30 -> **Dirección IP asignada para enlace punto a punto número 3.**
+
+46.90.19.172/30 -> **Dirección IP asignada para enlace punto a punto número 4.**
+
+46.90.19.168/30 -> **Dirección IP asignada para enlace punto a punto número 5.**
+
+46.90.19.164/30 -> **Dirección IP asignada para enlace punto a punto número 6.**
+
+46.90.19.160/30 -> **Dirección IP asignada para enlace punto a punto número 7.**
+
+46.90.19.156/30 -> **Dirección IP asignada para enlace punto a punto número 8.**
+
+46.90.19.152/30 -> **Dirección IP asignada para enlace punto a punto número 9.**
+
+46.90.19.148/30 -> **Dirección IP asignada para enlace punto a punto número 10.**
+
+46.90.19.144/30 -> **Dirección IP asignada para enlace punto a punto número 11.**
 
 
 a) Configurar la red detrás de n5 (n5,n13,n11) y la Red C con el bloque IPv6 asignado.
