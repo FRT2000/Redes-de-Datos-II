@@ -110,12 +110,21 @@ Finalmente las direcciones: `46.90.16.0/30` hasta `46.90.19.143/30` quedan libre
 
 ---
 
-La asignación de cada espacio de direcciones a partir del bloque IPv4 asignado es el siguiente:
+### Asignación de direcciones a cada red a partir del bloque IPv4 asignado
 
 ![Bloques Asignados Ejercicio 12 Práctica 3](/Recursos-TPI/Ejercicio12-Practica3-Bloques-Asignados.png)
 
+### Asignación de direcciones a cada host a partir del bloque IPv4 asignado
 
-a) Configurar la red detrás de n5 (n5,n13,n11) y la Red C con el bloque IPv6 asignado.
+![Hosts Asignados Ejercicio 12 Práctica 3](/Recursos-TPI/Ejercicio12-Practica3-HostsIPv4-Asignados.png)
+
+---
+
+## Configurar la red detrás de n5 (n5,n13,n11) y la Red C con el bloque IPv6 asignado.
+
+
+
+
 b) Resolver con ruteo estático la topología.
 c) Alternativo: Asignar a n10 una IP según RFC-1918 y configurar NAT en n1 para que
 pueda alcanzar al resto de los equipos.
