@@ -122,6 +122,42 @@ Finalmente las direcciones: `46.90.16.0/30` hasta `46.90.19.143/30` quedan libre
 
 ## Configurar la red detrás de n5 (n5,n13,n11) y la Red C con el bloque IPv6 asignado.
 
+### Direcciones IPv6 asignadas con el bloque asignado 2001:db81::/32
+
+A diferencia de IPv4, en IPv6 no se aplica VLSM. El espacio de direcciones es tan grande que la práctica estándar es asignar un prefijo /64 a cada subred.
+
+Para organizar el direccionamiento, dividiremos el bloque /32 y lo dividimos en bloques /48 para cada red principal.
+
+#### Asignación para Red A 2001:db81:000A::/48
+
+Se divide la Red A en subredes, asignando un /64 a cada una.
+
+Para este caso solo necesitamos una
+
+Subred (n5, n11, n13):
+
+**Red Asignada: 2001:db81:000A:0001::/64**
+
+
+#### Asignación para Red C 2001:db81:000C::/48
+
+Se divide la Red C en cuatro subredes, asignando un /64 a cada una.
+
+Subred (n2, n7):
+
+**Red Asignada: 2001:db81:000C:0001::/64**
+
+Subred (n7, n8):
+
+**Red Asignada: 2001:db81:000C:0002::/64**
+
+Subred (n9):
+
+**Red Asignada: 2001:db81:000C:0003::/64**
+
+Subred (n14):
+
+**Red Asignada: 2001:db81:000C:0004::/64**
 
 
 
