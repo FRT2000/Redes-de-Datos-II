@@ -159,12 +159,99 @@ Subred (n14):
 
 **Red Asignada: 2001:db81:000C:0004::/64**
 
+---
+
+### Asignación de direcciones a cada host a partir del bloque IPv6 asignado
+
+![Hosts IPv6 Asignados Ejercicio 12 Práctica 3](/Recursos-TPI/Ejercicio12-Practica3-HostsIPv6-Asignados.png)
+
+---
+
+## Resolver con ruteo estático la topología.
+## Realizar test con ping (ICMP) y traceroute para probar que funciona la topología.
+
+### Comandos aplicados a cada router
+
+**Router n5**
+- `ip route add default via 46.90.19.182`
+
+**Router n6**
+- `ip route add default via 46.90.19.178`
+- `ip route add 46.90.20.1/23 via 46.90.19.185`
+
+**Router n3**
+- `ip route add 46.90.20.0/23 via 46.90.19.181`
+- `ip route add 46.90.19.184/30 via 46.90.19.181`
+- `ip route add 46.90.19.188/30 via 46.90.19.166`
+- `ip route add 46.90.19.160/30 via 46.90.19.166`
+- `ip route add 46.90.19.168/30 via 46.90.19.174`
+- `ip route add 46.90.19.152/30 via 46.90.19.158`
+- `ip route add 46.90.19.148/30 via 46.90.19.158`
+- `ip route add 46.90.19.144/30 via 46.90.19.158`
+- `ip route add 46.90.19.192/26 via 46.90.19.158`
+- `ip route add 46.90.22.0/23 via 46.90.19.158`
+
+**Router n1**
+- `ip route add 46.90.20.0/23 via 46.90.19.165`
+- `ip route add 46.90.19.184/30 via 46.90.19.165`
+- `ip route add 46.90.19.180/30 via 46.90.19.165`
+- `ip route add 46.90.19.176/30 via 46.90.19.165`
+- `ip route add 46.90.19.156/30 via 46.90.19.165`
+- `ip route add 46.90.19.172/30 via 46.90.19.165`
+- `ip route add 46.90.19.168/30 via 46.90.19.165`
+- `ip route add 46.90.19.152/30 via 46.90.19.162`
+- `ip route add 46.90.19.148/30 via 46.90.19.162`
+- `ip route add 46.90.19.144/30 via 46.90.19.162`
+- `ip route add 46.90.19.192/26 via 46.90.19.162`
+- `ip route add 46.90.22.0/23 via 46.90.19.162`
 
 
-b) Resolver con ruteo estático la topología.
-c) Alternativo: Asignar a n10 una IP según RFC-1918 y configurar NAT en n1 para que
-pueda alcanzar al resto de los equipos.
-d) Realizar test con ping (ICMP) y traceroute para probar que funciona la topología.
+**Router n15**
+- `ip route add 46.90.20.0/23 via 46.90.19.173`
+- `ip route add 46.90.19.184/30 via 46.90.19.173`
+- `ip route add 46.90.19.180/30 via 46.90.19.173`
+- `ip route add 46.90.19.176/30 via 46.90.19.173`
+- `ip route add 46.90.19.164/30 via 46.90.19.173`
+- `ip route add 46.90.19.188/30 via 46.90.19.173`
+- `ip route add 46.90.19.160/30 via 46.90.19.173`
+- `ip route add 46.90.19.156/30 via 46.90.19.173`
+- `ip route add 46.90.19.152/30 via 46.90.19.170`
+- `ip route add 46.90.19.148/30 via 46.90.19.170`
+- `ip route add 46.90.19.144/30 via 46.90.19.170`
+- `ip route add 46.90.19.192/26 via 46.90.19.170`
+- `ip route add 46.90.22.0/23 via 46.90.19.170`
+
+
+**Router n4**
+- `ip route add default via 46.90.19.154`
+- `ip route add 46.90.20.0/23 via 46.90.19.169`
+- `ip route add 46.90.19.184/30 via 46.90.19.169`
+- `ip route add 46.90.19.180/30 via 46.90.19.169`
+- `ip route add 46.90.19.176/30 via 46.90.19.169`
+- `ip route add 46.90.19.164/30 via 46.90.19.169`
+- `ip route add 46.90.19.188/30 via 46.90.19.169`
+- `ip route add 46.90.19.172/30 via 46.90.19.169`
+
+**Router n2**
+- `ip route add default via 46.90.19.150`
+- `ip route add 46.90.20.0/23 via 46.90.19.157`
+- `ip route add 46.90.19.184/30 via 46.90.19.157`
+- `ip route add 46.90.19.180/30 via 46.90.19.157`
+- `ip route add 46.90.19.176/30 via 46.90.19.157`
+- `ip route add 46.90.19.164/30 via 46.90.19.157`
+- `ip route add 46.90.19.172/30 via 46.90.19.157`
+- `ip route add 46.90.19.168/30 via 46.90.19.153`
+- `ip route add 46.90.19.188/30 via 46.90.19.161`
+
+**Router n7**
+- `ip route add default via 46.90.19.149`
+- `ip route add 46.90.19.192/26 via 46.90.19.146`
+- `ip route add 46.90.22.0/23 via 46.90.19.146`
+
+**Router n8**
+- `ip route add default via 46.90.19.145`
+
+
 e) Capturar puntualmente el tráfico de n13 hacia n7 y analizar: ARP e ICMP.
 f) Realizar un traceroute entre los mismos equipos, capturar los mensajes.
 g) Alternativo: Modificar los MTU para ver la fragmentación.
