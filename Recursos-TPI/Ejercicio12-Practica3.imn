@@ -402,6 +402,9 @@ node n7 {
 	ip route add 46.90.19.172/30 via 46.90.19.157
 	ip route add 46.90.19.168/30 via 46.90.19.153
 	ip route add 46.90.19.188/30 via 46.90.19.161
+	
+	# Rutas IPv6
+	ip -6 route add default via 2001:db81:000C:0001::2
 	}
     }
 }
@@ -455,6 +458,9 @@ node n8 {
 	# Rutas para las otras redes
 	ip route add 46.90.19.192/26 via 46.90.19.146
 	ip route add 46.90.22.0/23 via 46.90.19.146
+	
+	# Rutas IPv6
+	ip -6 route add default via 2001:db81:000C:0002::2
 	}
     }
 }
@@ -511,6 +517,9 @@ node n9 {
 	
 	# Ruta por defecto
 	ip route add default via 46.90.19.145
+	
+	# Rutas IPv6
+	ip -6 route add default via 2001:db81:000C:0002::1
 	}
     }
 }

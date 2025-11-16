@@ -324,3 +324,19 @@ Se utilzó el comando `ping 46.90.22.2 -s 1000 -c 1 -M dont` dentro de n13
 ---
 
 ## Probar conectividad en las redes con IPv6 (por separado), capturar tráfico y analizar ICMPv6
+
+### Comandos aplicados dentro de los dispositivos dentro de la Red A
+
+Para el caso de la subred (n5, m13 y n11) no hizo falta configurar rutas ya que los dispositivos se encuentran directamente conectados dentro de la misma red.
+
+### Comandos aplicados dentro de la Red C
+
+**Router n2**
+- `ip -6 route add default via 2001:db81:000C:0001::2`
+
+**Router n7**
+- `ip -6 route add default via 2001:db81:000C:0002::2`
+
+**Router n8**
+- `ip -6 route add default via 2001:db81:000C:0002::1`
+
