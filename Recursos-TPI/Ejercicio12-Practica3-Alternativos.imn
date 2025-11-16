@@ -155,7 +155,6 @@ node n3 {
 	# Rutas para llegar a las otras redes
 	ip route add 46.90.20.0/23 via 46.90.19.181
 	ip route add 46.90.19.184/30 via 46.90.19.181
-	ip route add 46.90.19.188/30 via 46.90.19.166
 	ip route add 46.90.19.160/30 via 46.90.19.166
 	ip route add 46.90.19.168/30 via 46.90.19.174
 	ip route add 46.90.19.152/30 via 46.90.19.158
@@ -173,11 +172,11 @@ node n4 {
     network-config {
 	hostname n1
 	!
+	interface eth1
+	 ip address 192.168.1.1/24
+	!
 	interface eth2
 	 ip address 46.90.19.161/30
-	!
-	interface eth1
-	 ip address 46.90.19.189/30
 	!
 	interface eth0
 	 ip address 46.90.19.166/30
@@ -210,6 +209,11 @@ node n4 {
 	#/sbin/ip route add 10.9.8.0/24 via 46.90.19.165
 	#/sbin/ip route add 10.9.8.0/24 via 46.90.19.189
 	#/sbin/ip route add 10.9.8.0/24 via 46.90.19.161
+	
+	# Configurar NAT para la red privada
+	# Esto "enmascara" los paquetes de la red 192.168.1.0/24
+	# para que parezca que vienen de la IP publica del router n1.
+	iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -j MASQUERADE
 	
 	# Rutas para llegar a las otras redes
 	ip route add 46.90.20.0/23 via 46.90.19.165
@@ -273,7 +277,6 @@ node n5 {
 	ip route add 46.90.19.180/30 via 46.90.19.173
 	ip route add 46.90.19.176/30 via 46.90.19.173
 	ip route add 46.90.19.164/30 via 46.90.19.173
-	ip route add 46.90.19.188/30 via 46.90.19.173
 	ip route add 46.90.19.160/30 via 46.90.19.173
 	ip route add 46.90.19.156/30 via 46.90.19.173
 	ip route add 46.90.19.152/30 via 46.90.19.170
@@ -333,7 +336,6 @@ node n6 {
 	ip route add 46.90.19.180/30 via 46.90.19.169
 	ip route add 46.90.19.176/30 via 46.90.19.169
 	ip route add 46.90.19.164/30 via 46.90.19.169
-	ip route add 46.90.19.188/30 via 46.90.19.169
 	ip route add 46.90.19.172/30 via 46.90.19.169
 	}
     }
@@ -401,7 +403,6 @@ node n7 {
 	ip route add 46.90.19.164/30 via 46.90.19.157
 	ip route add 46.90.19.172/30 via 46.90.19.157
 	ip route add 46.90.19.168/30 via 46.90.19.153
-	ip route add 46.90.19.188/30 via 46.90.19.161
 	}
     }
 }
@@ -570,7 +571,7 @@ node n13 {
 	hostname n10
 	!
 	interface eth0
-	 ip address 46.90.19.190/30
+	 ip address 192.168.1.2/24
 	!
     }
     canvas c1
@@ -807,12 +808,12 @@ annotation a9 {
 }
 
 annotation a10 {
-    iconcoords {223.0 17.0}
+    iconcoords {230.0 17.0}
     type text
-    label {46.90.19.190/30}
+    label {192.168.1.2/24}
     labelcolor black
     fontfamily {KacstArt}
-    fontsize {8}
+    fontsize 8
     effects {bold}
     canvas c1
 }
@@ -1016,12 +1017,12 @@ annotation a28 {
 }
 
 annotation a29 {
-    iconcoords {283.0 64.0}
+    iconcoords {275.0 64.0}
     type text
-    label {46.90.19.189/30}
+    label {192.168.1.1/24}
     labelcolor black
     fontfamily {KacstArt}
-    fontsize {8}
+    fontsize 8
     effects {bold}
     canvas c1
 }

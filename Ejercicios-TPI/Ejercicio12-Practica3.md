@@ -177,7 +177,7 @@ Subred (n14):
 
 **Router n6**
 - `ip route add default via 46.90.19.178`
-- `ip route add 46.90.20.1/23 via 46.90.19.185`
+- `ip route add 46.90.20.0/23 via 46.90.19.185`
 
 **Router n3**
 - `ip route add 46.90.20.0/23 via 46.90.19.181`
@@ -251,8 +251,43 @@ Subred (n14):
 **Router n8**
 - `ip route add default via 46.90.19.145`
 
+---
 
-e) Capturar puntualmente el tráfico de n13 hacia n7 y analizar: ARP e ICMP.
+## Alternativo: Asignar a n10 una IP según RFC-1918 y configurar NAT en n1 para que pueda alcanzar al resto de los equipos.
+
+Se eliminó la dirección de la red `46.90.19.188/30` en cada router, ya que ahora la red de n10 tiene la dirección privada `192.168.1.0/24`.
+
+Comando agregado dentro del **Router n1** 
+- `iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -j MASQUERADE`
+
+### Asignación de direcciones privadas
+
+![Direcciones privadas Asignadas Ejercicio 12 Práctica 3](/Recursos-TPI/Ejercicio12-Practica3-Direcciones-Privadas.png)
+
+---
+
+## Capturar puntualmente el tráfico de n13 hacia n7 y analizar: ARP e ICMP.
+
+### Captura de tráfico realizando ping de n13 hacia n14
+
+![Caputar ping n13 hacia n14 Ejercicio 12 Práctica 3](/Recursos-TPI/Ejercicio12-Practica3-Captura-n13-n14.png)
+
+![Caputar ping n13 hacia n14 Detalle Ejercicio 12 Práctica 3](/Recursos-TPI/Ejercicio12-Practica3-Captura-n13-n14-detalle.png)
+
+- Análisis ARP (Paquetes 7 y 8):
+    - El ping (ICMP) no puede salir de inmediato. n13 sabe que n14 está en otra red, por lo que primero debe encontrar la dirección MAC de su gateway (n5, en ...20.1).
+    - Paquete 7: Es la solicitud ARP de n13 ("¿Quién tiene la IP 46.90.20.1?").
+    - Paquete 8: Es la respuesta ARP del gateway n5, informando su dirección MAC (00:00:00:aa:00:02).
+
+- Análisis ICMP (Paquetes 9 y 10):
+    - Una vez resuelto el ARP, n13 envía el ping.
+    - Paquete 9 (Request): Su destino IP es n14 (46.90.22.2), pero su destino MAC es el gateway n5 (00:00:00:aa:00:02).
+    - Paquete 10 (Reply): Es la respuesta de n14 que regresa. El gateway n5 la recibe y entrega localmente a la MAC de n13.
+
+---
+
+
+
 f) Realizar un traceroute entre los mismos equipos, capturar los mensajes.
 g) Alternativo: Modificar los MTU para ver la fragmentación.
 h) Probar conectividad en las redes con IPv6 (por separado), capturar tráfico y analizar
