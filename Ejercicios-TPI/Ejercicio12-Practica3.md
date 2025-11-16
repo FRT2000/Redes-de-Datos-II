@@ -286,9 +286,10 @@ Comando agregado dentro del **Router n1**
 
 ---
 
+### Realizar un traceroute entre los mismos equipos, capturar los mensajes.
 
 
-f) Realizar un traceroute entre los mismos equipos, capturar los mensajes.
+
 g) Alternativo: Modificar los MTU para ver la fragmentación.
 h) Probar conectividad en las redes con IPv6 (por separado), capturar tráfico y analizar
 ICMPv6
