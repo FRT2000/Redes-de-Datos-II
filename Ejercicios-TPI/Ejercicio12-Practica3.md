@@ -270,9 +270,9 @@ Comando agregado dentro del **Router n1**
 
 ### Captura de tráfico realizando ping de n13 hacia n14
 
-![Caputar ping n13 hacia n14 Ejercicio 12 Práctica 3](/Recursos-TPI/Ejercicio12-Practica3-Captura-n13-n14.png)
+![Captura ping n13 hacia n14 Ejercicio 12 Práctica 3](/Recursos-TPI/Ejercicio12-Practica3-Captura-n13-n14.png)
 
-![Caputar ping n13 hacia n14 Detalle Ejercicio 12 Práctica 3](/Recursos-TPI/Ejercicio12-Practica3-Captura-n13-n14-detalle.png)
+![Captura ping n13 hacia n14 Detalle Ejercicio 12 Práctica 3](/Recursos-TPI/Ejercicio12-Practica3-Captura-n13-n14-detalle.png)
 
 - Análisis ARP (Paquetes 7 y 8):
     - El ping (ICMP) no puede salir de inmediato. n13 sabe que n14 está en otra red, por lo que primero debe encontrar la dirección MAC de su gateway (n5, en ...20.1).
@@ -288,8 +288,39 @@ Comando agregado dentro del **Router n1**
 
 ### Realizar un traceroute entre los mismos equipos, capturar los mensajes.
 
+### Captura de tráfico realizando traceroute de n13 hacia n14
 
+![Captura traceroute n13 hacia n14 Ejercicio 12 Práctica 3](/Recursos-TPI/Ejercicio12-Practica3-Captura-n13-n14-traceroute-completo.png)
 
-g) Alternativo: Modificar los MTU para ver la fragmentación.
-h) Probar conectividad en las redes con IPv6 (por separado), capturar tráfico y analizar
-ICMPv6
+- Aparecen numerosas entradas “Time-to-live exceeded (in transit)” provenientes de las interfaces de los routers (enlaces punto-a-punto).
+- La última respuesta fue “Destination unreachable (Port unreachable)” desde 46.90.22.2, lo que indica llegada al bloque de RED C y, por lo tanto, al host destino (n14).
+- Cada salto presenta varias respuestas porque traceroute emite varios paquetes por TTL (normalmente 3).
+- Se observan paquetes UDP salientes y las respuestas ICMP de los saltos intermedios.
+
+---
+
+## Alternativo: Modificar los MTU para ver la fragmentación.
+
+### Comandos utilizados para modificar el MTU del enlace entre n2 y n7
+  
+**Router n7**
+
+`ip link set dev eth0 mtu 500` -> en la interfaz eth0
+
+`ip link show eth0` -> verificar el MTU configurado en eth0
+
+**Router n2**
+
+`ip link set dev eth3 mtu 500` -> en la interfaz eth3
+
+`ip link show eth3` -> verificar el MTU configurado en eth3
+
+### Captura de tráfico realizando ping de n13 hacia n14 modificando MTU entre n2 y n7
+
+Se utilzó el comando `ping 46.90.22.2 -s 1000 -c 1 -M dont` dentro de n13
+
+![Captura ping n13 hacia n14 MTU Ejercicio 12 Práctica 3](/Recursos-TPI/Ejercicio12-Practica3-Captura-n13-n14-MTU.png)
+ 
+---
+
+## Probar conectividad en las redes con IPv6 (por separado), capturar tráfico y analizar ICMPv6

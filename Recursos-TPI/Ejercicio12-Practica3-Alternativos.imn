@@ -675,8 +675,9 @@ link l13 {
 }
 
 link l14 {
+    color Red
     nodes {n7 n8}
-    bandwidth 0
+    bandwidth {0 0}
 }
 
 link l15 {
@@ -813,7 +814,7 @@ annotation a10 {
     label {192.168.1.2/24}
     labelcolor black
     fontfamily {KacstArt}
-    fontsize 8
+    fontsize {8}
     effects {bold}
     canvas c1
 }
@@ -1022,7 +1023,7 @@ annotation a29 {
     label {192.168.1.1/24}
     labelcolor black
     fontfamily {KacstArt}
-    fontsize 8
+    fontsize {8}
     effects {bold}
     canvas c1
 }
