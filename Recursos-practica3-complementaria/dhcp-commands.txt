@@ -1,0 +1,130 @@
+
+# En el Router:
+
+## Ver el estado del server de DHCP
+/etc/init.d/isc-dhcp-server status
+ss -aun
+
+## Si no esta corriendo, correr con:
+/etc/init.d/isc-dhcp-server restart
+
+## Y volver a ver el estado:
+/etc/init.d/isc-dhcp-server status
+ss -aun
+
+## Ver los leases
+
+tail /var/lib/dhcp/dhcpd.leases
+tail /var/lib/dhcp/dhcpd6.leases
+
+# En los clientes:
+
+## Solicitar direcciones
+dhclient -d eth0
+dhclient -6 -d eth0
+
+## Liberar direcciones 
+dhclient -r -d eth0
+dhclient -r -6 -d eth0
+
+Ejemplos:
+
+root@n1:/tmp/pycore.46449/n1.conf# /etc/init.d/isc-dhcp-server status
+Status of ISC DHCPv4 server: dhcpd is running.
+Status of ISC DHCPv6 server: dhcpd6 is running.
+
+root@n1:/tmp/pycore.46449/n1.conf# ss -aun
+State    Recv-Q   Send-Q     Local Address:Port     Peer Address:Port  Process  
+UNCONN   0        0                0.0.0.0:67            0.0.0.0:*              
+UNCONN   0        0                      *:547                 *:*
+
+root@n3:/tmp/pycore.46449/n3.conf# dhclient -d eth0
+Internet Systems Consortium DHCP Client 4.4.1
+Copyright 2004-2018 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+
+Listening on LPF/eth0/00:00:00:aa:00:01
+Sending on   LPF/eth0/00:00:00:aa:00:01
+Sending on   Socket/fallback
+DHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 3 (xid=0x55f8b16a)
+DHCPOFFER of 10.0.0.127 from 10.0.0.1
+DHCPREQUEST for 10.0.0.127 on eth0 to 255.255.255.255 port 67 (xid=0x6ab1f855)
+DHCPACK of 10.0.0.127 from 10.0.0.1 (xid=0x55f8b16a)
+System has not been booted with systemd as init system (PID 1). Can't operate.
+Failed to connect to bus: Host is down
+System has not been booted with systemd as init system (PID 1). Can't operate.
+Failed to connect to bus: Host is down
+bound to 10.0.0.127 -- renewal in 263 seconds.
+
+
+root@n3:/tmp/pycore.46449/n3.conf# dhclient -6 -d eth0
+Internet Systems Consortium DHCP Client 4.4.1
+Copyright 2004-2018 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+
+Listening on Socket/eth0
+Sending on   Socket/eth0
+PRC: Soliciting for leases (INIT).
+XMT: Forming Solicit, 0 ms elapsed.
+XMT:  X-- IA_NA 00:aa:00:01
+XMT:  | X-- Request renew in  +3600
+XMT:  | X-- Request rebind in +5400
+XMT:  | X-- Request address 2001::10.
+XMT:  | | X-- Request preferred in +7200
+XMT:  | | X-- Request valid in     +10800
+XMT: Solicit on eth0, interval 1030ms.
+RCV: Advertise message on eth0 from fe80::200:ff:feaa:0.
+RCV:  X-- IA_NA 00:aa:00:01
+RCV:  | X-- starts 1760360253
+RCV:  | X-- t1 - renew  +3600
+RCV:  | X-- t2 - rebind +7200
+RCV:  | X-- [Options]
+RCV:  | | X-- IAADDR 2001::10
+RCV:  | | | X-- Preferred lifetime 604800.
+RCV:  | | | X-- Max lifetime 2592000.
+RCV:  X-- Server ID: 00:01:00:01:30:7f:b1:fd:00:00:00:aa:00:00
+RCV:  Advertisement recorded.
+PRC: Selecting best advertised lease.
+PRC: Considering best lease.
+PRC:  X-- Initial candidate 00:01:00:01:30:7f:b1:fd:00:00:00:aa:00:00 (s: 10105, p: 0).
+XMT: Forming Request, 0 ms elapsed.
+XMT:  X-- IA_NA 00:aa:00:01
+XMT:  | X-- Requested renew  +3600
+XMT:  | X-- Requested rebind +5400
+XMT:  | | X-- IAADDR 2001::10
+XMT:  | | | X-- Preferred lifetime +7200
+XMT:  | | | X-- Max lifetime +7500
+XMT:  V IA_NA appended.
+XMT: Request on eth0, interval 930ms.
+RCV: Reply message on eth0 from fe80::200:ff:feaa:0.
+RCV:  X-- IA_NA 00:aa:00:01
+RCV:  | X-- starts 1760360254
+RCV:  | X-- t1 - renew  +3600
+RCV:  | X-- t2 - rebind +7200
+RCV:  | X-- [Options]
+RCV:  | | X-- IAADDR 2001::10
+RCV:  | | | X-- Preferred lifetime 604800.
+RCV:  | | | X-- Max lifetime 2592000.
+RCV:  X-- Server ID: 00:01:00:01:30:7f:b1:fd:00:00:00:aa:00:00
+PRC: Bound to lease 00:01:00:01:30:7f:b1:fd:00:00:00:aa:00:00.
+System has not been booted with systemd as init system (PID 1). Can't operate.
+Failed to connect to bus: Host is down
+System has not been booted with systemd as init system (PID 1). Can't operate.
+Failed to connect to bus: Host is down
+PRC: Renewal event scheduled in 3600 seconds, to run for 3600 seconds.
+PRC: Depreference scheduled in 604800 seconds.
+PRC: Expiration scheduled in 2592000 seconds.
+
+root@n1:/tmp/pycore.46449/n1.conf# tail /var/lib/dhcp/dhcpd.leases
+lease 10.0.0.127 {
+  starts 1 2025/10/13 12:57:00;
+  ends 1 2025/10/13 13:07:00;
+  cltt 1 2025/10/13 12:57:00;
+  binding state active;
+  next binding state free;
+  rewind binding state free;
+  hardware ethernet 00:00:00:aa:00:01;
+  client-hostname "n3";
+}

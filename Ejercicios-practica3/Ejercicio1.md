@@ -97,7 +97,7 @@ Por lo tanto el resultado final será:
 
 65.0.0.48/28 -> **dirección IP asignada para los primeros 10 hosts.**
 
-Finalmente las direcciones: `65.0.0.0/28` hasta la `65.0.0.47/28` quedan libres para seguir subneteando.
+Finalmente las direcciones: `65.0.0.0` hasta la `65.0.0.47` quedan libres para seguir subneteando.
 
 ---
 
@@ -119,7 +119,7 @@ Por lo tanto el resultado final será:
 
 Si nos pidieran 2 redes más para otros 10 hosts cada una, repetiríamos el proceso de ir restando uno a la red anterior. En caso de necesitar más de 2 redes con 10 hosts cada una a partir de las asignaciones anteriores, no alcanzarían las direcciones. 
 
-Finalmente las direcciones: `65.0.0.0/28` hasta la `65.0.0.31/28` quedan disponibles para seguir subneteando. Si sumarizamos, podemos expresarlo como `65.0.0.0/27`
+Finalmente las direcciones: `65.0.0.0` hasta la `65.0.0.31` quedan disponibles para seguir subneteando. Si sumarizamos, podemos expresarlo como `65.0.0.0/27`
 
 ---
 
@@ -154,7 +154,7 @@ Por lo tanto el resultado final será:
 
 100.0.248.0/21 -> **dirección IP asignada para los 2000 hosts.**
 
-Finalmente las direcciones: `100.0.0.0/21` hasta `100.0.247.255/21` quedan libres para seguir subneteando.
+Finalmente las direcciones: `100.0.0.0` hasta `100.0.247.255` quedan libres para seguir subneteando.
 
 ---
 
@@ -172,7 +172,7 @@ Por lo tanto el resultado final será:
 
 100.0.240.0/21 -> **dirección IP asignada para los segundos 2000 hosts.** 
 
-Finalmente las direcciones a partir de `100.0.0.0/21` hasta `100.0.239.255/21` quedan libres para seguir subneteando.
+Finalmente las direcciones a partir de `100.0.0.0` hasta `100.0.239.255` quedan libres para seguir subneteando.
 
 ---
 
@@ -184,7 +184,7 @@ $2^{9}$ - 2 = 510 hosts.
 
 Para esto nos posicionamos en la última red libre para empezar el subnetting:
 
-100.0.239.255/21 -> Red de la cual partimos.
+100.0.239.255 -> Red de la cual partimos.
 
 0110 0100.0000 0000.1110 1111.1111 1111 -> red expresada en bits.
 
@@ -212,13 +212,13 @@ Por lo tanto el resultado final será:
 
 100.0.236.0/23 -> **dirección IP asignada para los segundos 500 hosts.** 
 
-Finalmente las direcciones: `100.0.0.0/23` hasta `100.0.235.255/23` quedan disponibles para seguir subneteando.
+Finalmente las direcciones: `100.0.0.0` hasta `100.0.235.255` quedan disponibles para seguir subneteando.
 
 ---
 
 #### Red número 1 de 300 host
 
-Partimos de la red 100.0.235.255/23 la cual queda libre para seguir con el mismo procedimiento.
+Partimos de la red 100.0.235.255 la cual queda libre para seguir con el mismo procedimiento.
 
 En este caso la red necesita 300 hosts. Para esto se necesitarán 9 bits designados para hosts, dado que:
 
@@ -462,7 +462,7 @@ Por lo tanto el resultado final será:
 
 100.0.196.0/23 -> **dirección IP asignada para la red número 20 de 300 hosts.**
 
-Finalmente las direcciones: `100.0.0.0/23` hasta `100.0.195.255/23` quedan disponibles para seguir subneteando.
+Finalmente las direcciones: `100.0.0.0` hasta `100.0.195.255` quedan disponibles para seguir subneteando.
 
 ---
 
@@ -474,7 +474,7 @@ $2^{8}$ - 2 = 254 hosts.
 
 Para esto nos posicionamos en la última red libre para empezar el subnetting:
 
-100.0.195.255/23 -> Red de la cual partimos.
+100.0.195.255 -> Red de la cual partimos.
 
 0110 0100.0000 0000.1100 0011.1111 1111 -> red expresada en bits.
 
@@ -488,7 +488,7 @@ La nueva máscara de subred será /24
 
 Ahora siguiendo con el mismo procedimiento asignando las direcciones de forma decremental, las direcciones asignadas para cada red de 200 hosts quedan: 100.0.194.0/24; 100.0.193.0/24; 100.0.192.0/24 ... hasta 100.0.146.0/24 inclusive.
 
-Finalmente las direcciones: `100.0.0.0/24` hasta `100.0.145.255/24` quedan disponibles para seguir subneteando.
+Finalmente las direcciones: `100.0.0.0` hasta `100.0.145.255` quedan disponibles para seguir subneteando.
 
 ---
 
@@ -498,7 +498,7 @@ Necesitamos 7 bits para las direcciones que se solicitan, ya que: $2^{7}$ - 2 = 
 
 Para esto nos posicionamos en la última red libre para empezar el subnetting:
 
-100.0.145.255/24 -> Red de la cual partimos.
+100.0.145.255 -> Red de la cual partimos.
 
 0110 0100.0000 0000.1001 0001.1111 1111 -> red expresada en bits.
 
@@ -510,4 +510,4 @@ La nueva máscara de subred será /25
 
 100.0.145.128/25 -> **dirección IP asignada para la red de backbone.**
 
-Finalmente las direcciones: `100.0.0.0/25` hasta `100.0.145.127/25` quedan disponibles para seguir subneteando.
+Finalmente las direcciones: `100.0.0.0` hasta `100.0.145.127` quedan disponibles para seguir subneteando.
