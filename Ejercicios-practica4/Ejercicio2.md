@@ -28,4 +28,5 @@ El archivo texto plano **/etc/protocols** mapea los nombres de los protocolos a 
 Podemos comprobarlo ejecutando el comando `cat /etc/protocols | grep -E 'tcp|udp'` en la terminal. La salida nos devolverá esto:
 
 tcp     6       TCP    # transmission control protocol
+
 udp     17      UDP    # user datagram protocol
