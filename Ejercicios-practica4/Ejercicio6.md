@@ -82,3 +82,19 @@ Total: 4 datagramas UDP.
 
 ## Hacer una simulación de los escenarios, con nc (netcat) o telnet.
 
+Se realizó la siguiente topología y el uso de wireshark para la visualización de los escenarios.
+
+![Topología inciso h](/Recursos-practica4/Ejercicio6-Inciso-h.png)
+
+A continuación los comandos utilizados en cada dispositivo:
+
+**Server** -> Usamos dos terminales para escuchar en el puerto 23 y visualizar las conexiones establecidas. 
+- `nc -l -p 23 -v -k -n` -> en Terminal 1
+- `netstat -tanp | grep :23` -> en Terminal 2
+
+**PC1** -> Usamos dos terminales para generar dos conexiones con la misma IP pero diferente puerto en el servidor.
+- `nc 192.168.1.10 23` -> Terminal 1 (Proceso A)
+- `nc 192.168.1.10 23` -> Terminal 2 (Proceso B)
+
+**PC2** -> Usamos solamente una terminal, ya que solo estableceremos conexión.
+- `nc 192.168.1.10 23`
