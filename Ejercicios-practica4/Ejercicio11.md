@@ -10,7 +10,7 @@ En el diagrama, la etiqueta "0.005s bandwidth" señala el tiempo que tarda el tr
 - Tamaño del segmento: 512 bytes.
 - Tiempo de transmisión (Tx): 0.005 segundos.
 
-![Ejercicio 11 Inciso a](/Recursos-practica4/Ejercicio11-iniciso-a.png)
+![Ejercicio 11 Inciso a](/Recursos-practica4/Ejercicio11-inciso-a.png)
 
 ## ¿Cuál debería ser el valor óptimo del T1 (RTO, Timer de retransmisión) suponiendo que el delay se mantiene constante? 
 
