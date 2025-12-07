@@ -36,7 +36,7 @@ Nueva máscara de subred /23
 
 46.90.22.0/23 -> **Dirección IP asignada para la red n14.**
 
-Finalmente las direcciones: `46.90.16.0/23` hasta `46.90.21.255/23` quedan libres para seguir subneteando.
+Finalmente las direcciones: `46.90.16.0` hasta `46.90.21.255` quedan libres para seguir subneteando.
 
 ### Red n11/n13 de 328 hosts
 
@@ -46,11 +46,11 @@ Nuevamente necesitamos 9 bits entonces le asiganamos la próxima red disponible 
 
 46.90.20.0/23 -> **Dirección IP asignada para la red n11/n13.**
 
-Finalmente las direcciones: `46.90.16.0/23` hasta `46.90.19.255/23` quedan libres para seguir subneteando.
+Finalmente las direcciones: `46.90.16.0` hasta `46.90.19.255` quedan libres para seguir subneteando.
 
 ### Red n9 de 40 hosts
 
-46.90.19.255/23 -> Red de la cual partimos.
+46.90.19.255 -> Red de la cual partimos.
 
 0010 1110.0101 1010.0001 0011.1111 1111 -> red expresada en bits.
 
@@ -62,11 +62,11 @@ La nueva máscara de subred será /26
 
 46.90.19.192/26 -> **Dirección IP asignada para la red n9.**
 
-Finalmente las direcciones: `46.90.16.0/26` hasta `46.90.19.191/26` quedan libres para seguir subneteando.
+Finalmente las direcciones: `46.90.16.0` hasta `46.90.19.191` quedan libres para seguir subneteando.
 
 ### Red n10 de 2 hosts
 
-46.90.19.191/26 -> Red de la cual partimos.
+46.90.19.191 -> Red de la cual partimos.
 
 0010 1110.0101 1010.0001 0011.1011 1111 -> red expresada en bits
 
@@ -78,7 +78,7 @@ La nueva máscara de subred será /30
 
 46.90.19.188/30 -> **Dirección IP asignada para la red n10.**
 
-Finalmente las direcciones: `46.90.16.0/30` hasta `46.90.19.187/30` quedan libres para seguir subneteando.
+Finalmente las direcciones: `46.90.16.0` hasta `46.90.19.187` quedan libres para seguir subneteando.
 
 ### Enlaces punto a punto
 
@@ -106,7 +106,7 @@ Nuevamente necesitamos 2 bits entonces le asiganamos la próxima red disponible 
 
 46.90.19.144/30 -> **Dirección IP asignada para enlace punto a punto número 11.**
 
-Finalmente las direcciones: `46.90.16.0/30` hasta `46.90.19.143/30` quedan libres para seguir subneteando.
+Finalmente las direcciones: `46.90.16.0` hasta `46.90.19.143` quedan libres para seguir subneteando.
 
 ---
 
