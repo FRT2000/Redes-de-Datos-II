@@ -32,3 +32,24 @@ Finalmente las direcciones: `46.90.16.0` hasta `46.90.19.63` quedan libres para 
 
 **Asignación para la Red de n15: 2001:db81:000B:0001::/64**
 
+---
+
+### Asignación de direcciones a cada host de la red n15
+
+![Ejercicio 10 práctica 3 complemento](/Recursos-TPI/Ejercicio10-Practica3-complemento.png)
+
+---
+
+### Activar los RA dentro de n15
+
+Se realizó la siguiente secuencia.
+
+Primero en una terminal de linux fuera de la herramienta CORE instalamos: `sudo apt install radvd`
+
+Luego dentro del servicio "Static Route" colocamos lo siguiente: `radvd -n -d 2 -C /etc/radvd.conf`
+
+Finalmente con el comando `ip address show` en la terminal del host n16 observaremos la siguiente línea:
+
+![Configuración SLACC en n16](/Recursos-TPI/Ejercicio10-Practica3-complemento-n16..png)
+
+Esto significa que la dirección pudo configurarse automáticamente con el RA de su gateway, por lo tanto está funcionando correctamente.
