@@ -56,9 +56,22 @@ Al visualizar el mensaje:
 
 Significa que todo se realizó correctamente
 
-c) Enviar información desde n13 a n9 a un port UDP donde no existe un proceso esperando por
-recibir datos. ¿Cómo notifica el stack TCP/IP de este hecho? Investigue la herramienta
-traceroute que ports utiliza y cómo usa estos mensajes (Ver ejercicio de IP con ruteo
-estático).
-d ) Para las pruebas anteriores capturar tráfico y ver el formato de los datagramas UDP y como
-se encapsulan en IP
+---
+
+## Enviar información desde n13 a n9 a un port UDP donde no existe un proceso esperando por recibir datos. ¿Cómo notifica el stack TCP/IP de este hecho? Investigue la herramienta traceroute que ports utiliza y cómo usa estos mensajes (Ver ejercicio de IP con ruteo estático).
+
+Realizamos los pasos similares al inciso anterior, sólo que esta vez le indicamos un puerto diferente al host n13:
+
+### Host n9
+- `vim /etc/inetd.conf` -> Verificamos el archivo
+    - `echo   dgram   udp     wait    root    internal` -> nos aseguramos que esta línea esté descomentada (sin "#" al inicio)
+- `/etc/init.d/openbsd-inetd restart` -> iniciar el servicio
+- `netstat -anu | grep :7` -> verificamos que está funcionando
+
+### Host n11
+- `echo "Hola?" | nc -u -w 1 46.90.19.194 9999`
+- También podemos cambiar el puerto en la variable "PUERTO" dentro del script "**cliente_udp.py**"
+
+---
+
+## Para las pruebas anteriores capturar tráfico y ver el formato de los datagramas UDP y como se encapsulan en IP
