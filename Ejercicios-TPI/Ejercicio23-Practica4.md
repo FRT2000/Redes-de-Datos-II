@@ -2,15 +2,42 @@
 
 ## Programar en el lenguaje de su elección mediante la API socket un servidor TCP que escuche conexiones en el puerto 9000 y que los datos que reciba los descarte. Correr en el nodo n9 y enviar datos desde otro nodo usando la herramienta nc (netcat) o telnet.
 
+Realizamos el script "**servidor_tcp_discard.py**" y ejecutamos lo siguiente en cada host
+
+### Host n9
+- `python3 <ubicación del script>/servidor_tcp_discard.py` -> servidor TCP discard
+
+### Host n13
+- `nc <IP_de_n9> 9000`
+
+Probamos si los paquetes se envían y reciben correctamente:
+
+![Inciso A](/Recursos-TPI/Ejercicio23-Practica4-incisoA.png)
+
+La conectividad se establece y cierra correctamente
+
+---
+
+## En el nodo n9 levantar con el super daemon inetd algunos servicios extras, como tcp echo, discard y otros. Chequear los servicios TCP y UDP activos.
+
+### Host n9
+- `vim /etc/inetd.conf` -> Verificamos el archivo
+    - `echo     dgram   udp     wait    root    internal` -> nos aseguramos que esté descomentado
+    - `discard  stream  tcp     nowait  root    internal` -> nos aseguramos que esté descomentado
+    - `daytime  stream  tcp     nowait  root    internal` -> nos aseguramos que esté descomentado
+- `/etc/init.d/openbsd-inetd restart` -> iniciar el servicio
+- `netstat -ant` -> verificamos que está escuchando los puertos 7, 9 y 13
+
+![Inciso B](/Recursos-TPI/Ejercicio23-Practica4-incisoB.png)
+
+Está escuchando en los puertos correctamente
+
+---
+
+## Desde el nodo n13 realizar una conexión TCP y enviar datos mediante un programa cliente de su elección al servicio discard, y al echo. Capturar el tráfico con la herramienta tcpdump o wireshark y analizar la cantidad de segmentos, los flags utilizados y las opciones extras que llevan los encabezados tcp.
 
 
 
-b) En el nodo n9 levantar con el super daemon inetd algunos servicios extras, como tcp echo,
-discard y otros. Chequear los servicios TCP y UDP activos.
-c) Desde el nodo n13 realizar una conexión TCP y enviar datos mediante un programa cliente
-de su elección al servicio discard, y al echo. Capturar el tráfico con la herramienta tcpdump o
-wireshark y analizar la cantidad de segmentos, los flags utilizados y las opciones extras que
-llevan los encabezados tcp.
 d) Sin cerrar las conexiones chequear los servicios activos y ver los Estados.
 e ) Generar nuevas conexiones hacia el nodo n9 e inspeccionar los estados. Por ejemplo
 realizar varias conexiones simultáneas al servicio tcp echo desde el mismo origen y desde
