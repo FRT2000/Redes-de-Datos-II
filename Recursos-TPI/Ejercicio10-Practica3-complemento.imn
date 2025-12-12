@@ -1458,7 +1458,7 @@ annotation a64 {
     label {eth2}
     labelcolor black
     fontfamily {KacstArt}
-    fontsize 9
+    fontsize {9}
     effects {bold}
     canvas c1
 }
@@ -1469,7 +1469,7 @@ annotation a65 {
     label {eth0}
     labelcolor black
     fontfamily {KacstArt}
-    fontsize 9
+    fontsize {9}
     effects {bold}
     canvas c1
 }
@@ -1480,7 +1480,7 @@ annotation a66 {
     label {46.90.19.66/26}
     labelcolor black
     fontfamily {KacstArt}
-    fontsize 8
+    fontsize {8}
     effects {bold}
     canvas c1
 }
@@ -1491,7 +1491,7 @@ annotation a67 {
     label {46.90.19.65/26}
     labelcolor black
     fontfamily {KacstArt}
-    fontsize 8
+    fontsize {8}
     effects {bold}
     canvas c1
 }
@@ -1502,18 +1502,7 @@ annotation a68 {
     label {2001:db81:000B:0001::1/64}
     labelcolor black
     fontfamily {KacstArt}
-    fontsize 8
-    effects {bold}
-    canvas c1
-}
-
-annotation a69 {
-    iconcoords {381.0 559.0}
-    type text
-    label {2001:db81:000B:0001::2/64}
-    labelcolor black
-    fontfamily {KacstArt}
-    fontsize 8
+    fontsize {8}
     effects {bold}
     canvas c1
 }
